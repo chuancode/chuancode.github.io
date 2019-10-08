@@ -76,7 +76,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/favicon.ico
+favicon: /assets/images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "Jekyll, NexT"
@@ -345,8 +345,8 @@ post_copyright:
 #   enabled: [true/false] - Replace with specific image
 #   image: url-of-image   - Images's url
 custom_logo:
-  enabled: false
-  image:
+  enabled: true
+  image: /assets/images/logo.png
 
 
 # Code Highlight theme
