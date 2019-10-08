@@ -42,3 +42,5 @@ Google Analytics &#10140; 管理 &#10140; 自訂定義 &#10140; 自定維度 &#1
 再次要維度中選擇自定義維度的名稱
 
 ![cid-5](/assets/images/post/cid-5.png)
+
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" frameborder="0" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
