@@ -2,12 +2,14 @@
 <search>
   
     <entry>
-      <title><![CDATA[Next Theme Tutorial]]></title>
-      <url>/jekyll/2017/07/20/next-tutorial/</url>
-      <content type="text"><![CDATA[  NexT is a high quality elegant Jekyll theme ported from Hexo Next. It is crafted from scratch, with love.Live PreviewScreenshots      Desktop        Sidebar    Sidebar (Post details page)  MobileInstallationCheck whether you have Ruby 2.1.0 or higher installed:ruby --versionInstall Bundler:gem install bundlerClone Jacman theme:git clone https://github.com/Simpleyyt/jekyll-theme-next.gitcd jekyll-theme-nextInstall Jekyll and other dependencies from the GitHub Pages gem:bundle installRun your Jekyll site locally:bundle exec jekyll serverMore Details：Setting up your GitHub Pages site locally with JekyllFeaturesMultiple languages support, including: English / Russian / French / German / Simplified Chinese / Traditional Chinese.Default language is English.language: en# language: zh-Hans# language: fr-FR# language: zh-hk# language: zh-tw# language: ru# language: deSet language field as following in site _config.yml to change to Chinese.language: zh-HansComment support.NexT has native support for DuoShuo and Disqus comment systems.Add the following snippets to your _config.yml:duoshuo:  enable: true  shortname: your-duoshuo-shortnameORdisqus_shortname: your-disqus-shortnameSocial MediaNexT can automatically add links to your Social Media accounts:social:  GitHub: your-github-url  Twitter: your-twitter-url  Weibo: your-weibo-url  DouBan: your-douban-url  ZhiHu: your-zhihu-urlFeed link.  Show a feed link.Set rss field in theme’s _config.yml, as the following value:  rss: false will totally disable feed link.      rss:   use sites’ feed link. This is the default option.    Follow the installation instruction in the plugin’s README. After the configuration is done for this plugin, the feed link is ready too.    rss: http://your-feed-url set specific feed link.Up to 5 code highlight themes built-in.NexT uses Tomorrow Theme with 5 themes for you to choose from.Next use normal by default. Have a preview about normal and night:Head over to Tomorrow Theme for more details.ConfigurationNexT comes with few configurations.# Menu configuration.menu:  home: /  archives: /archives# Faviconfavicon: /favicon.ico# Avatar (put the image into next/source/images/)# can be any image format supported by web browsers (JPEG,PNG,GIF,SVG,..)avatar: /default_avatar.png# Code highlight theme# available: normal | night | night eighties | night blue | night brighthighlight_theme: normal# Fancybox for image galleryfancybox: true# Specify the date when the site was setupsince: 2013Browser support]]></content>
+      <title><![CDATA[Google Tag Manager 抓取 Client Id]]></title>
+      <url>/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/</url>
+      <content type="text"><![CDATA[Client Id 是？當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)如何利用 GTM 取得 Client Id設置自定義維度Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度GTM設置新變數☑ 變數類型；自訂JavaScript建立觸發條件☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )☑ 這項觸發條件的啟動時機：部分的載入視窗事件建立代碼 ( Tags )在 Google Analytics 查看再次要維度中選擇自定義維度的名稱]]></content>
       <categories>
         
-          <category> jekyll </category>
+          <category> Google Analytics </category>
+        
+          <category> Google Tag Manager </category>
         
       </categories>
       <tags>

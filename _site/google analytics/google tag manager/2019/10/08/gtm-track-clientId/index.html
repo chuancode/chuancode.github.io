@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jekyll, NexT" />
+  <meta name="keywords" content="" />
 
 
 
@@ -109,17 +109,23 @@
 
 
 
-<meta name="description" content="Hi">
+<meta name="description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
 <meta name="keywords" content="Jekyll, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chuan Code">
-<meta property="og:url" content="http://localhost:8080/tag/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Tag Manager 抓取 Client Id">
+<meta property="og:url" content="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="Hi">
+<meta property="og:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="/assets/images/post/cid-1.png">
+<meta property="og:image" content="/assets/images/post/cid-2.png">
+<meta property="og:image" content="/assets/images/post/cid-3.png">
+<meta property="og:image" content="/assets/images/post/cid-4.png">
+<meta property="og:image" content="/assets/images/post/cid-5.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chuan Code">
-<meta name="twitter:description" content="Hi">
+<meta name="twitter:title" content="Google Tag Manager 抓取 Client Id">
+<meta name="twitter:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
+<meta name="twitter:image" content="/assets/images/post/cid-1.png">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -152,7 +158,7 @@
 
 
 
-  <title>Tag | Chuan Code</title>
+  <title>Google Tag Manager 抓取 Client Id | Chuan Code</title>
   
 
 
@@ -186,7 +192,7 @@
   
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,21 +288,226 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-<div id="posts" class="posts-collapse" hidden>
-  <div class="collection-title">
-    <h1>
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chuan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="assets/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chuan Code">
+    </span>
+
     
-    <small>Tag</small>
-    </h1>
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            Google Tag Manager 抓取 Client Id
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Google%20Analytics" itemprop="url" rel="index">
+                    <span itemprop="name">Google Analytics</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Google%20Tag%20Manager" itemprop="url" rel="index">
+                    <span itemprop="name">Google Tag Manager</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    利用 Tag Manager 追蹤 Google Analytics Client Id
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="client-id-是">Client Id 是？</h2>
+
+<p>當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)</p>
+
+<h2 id="如何利用-gtm-取得-client-id">如何利用 GTM 取得 Client Id</h2>
+
+<h3 id="設置自定義維度">設置自定義維度</h3>
+
+<p>Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度</p>
+
+<p><img src="/assets/images/post/cid-1.png" alt="cid-1" /></p>
+
+<h3 id="gtm設置新變數">GTM設置新變數</h3>
+
+<p>☑ 變數類型；自訂JavaScript</p>
+
+<script src="https://gist.github.com/chuan520/ed0a4b7784969ec26626d6d0c632f62f.js"></script>
+
+<p><img src="/assets/images/post/cid-2.png" alt="cid-2" /></p>
+
+<h3 id="建立觸發條件">建立觸發條件</h3>
+
+<p>☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )
+☑ 這項觸發條件的啟動時機：部分的載入視窗事件</p>
+
+<p><img src="/assets/images/post/cid-3.png" alt="cid-3" /></p>
+
+<h3 id="建立代碼--tags-">建立代碼 ( Tags )</h3>
+
+<p><img src="/assets/images/post/cid-4.png" alt="cid-4" /></p>
+
+<h2 id="在-google-analytics-查看">在 Google Analytics 查看</h2>
+
+<p>再次要維度中選擇自定義維度的名稱</p>
+
+<p><img src="/assets/images/post/cid-5.png" alt="cid-5" /></p>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
   </div>
-
-  
-  
-
-  
 </div>
-
-<nav class="pagination"></nav>
 
 
           </div>
@@ -304,6 +515,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -321,10 +536,30 @@
     <div class="sidebar-inner">
 
       
+        
+        
+        
+
+
+
+
+
+
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/avatar.gif"
@@ -379,6 +614,34 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#client-id-是"> <span class="nav-number">1</span> <span class="nav-text">Client Id 是？</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#如何利用-gtm-取得-client-id"> <span class="nav-number">2</span> <span class="nav-text">如何利用 GTM 取得 Client Id</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#設置自定義維度"> <span class="nav-number">2.1</span> <span class="nav-text">設置自定義維度</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#gtm設置新變數"> <span class="nav-number">2.2</span> <span class="nav-text">GTM設置新變數</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立觸發條件"> <span class="nav-number">2.3</span> <span class="nav-text">建立觸發條件</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立代碼--tags-"> <span class="nav-number">2.4</span> <span class="nav-text">建立代碼 ( Tags )</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-google-analytics-查看"> <span class="nav-number">3</span> <span class="nav-text">在 Google Analytics 查看</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -516,99 +779,9 @@
   
   
 
-  
-    
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
 
-
-
-  <script type="text/javascript" src="/assets/js/src/paginator.js"></script>
-  <script>
-    (function() {
-      // Url route
-      var hash = window.location.hash.substring(1);
-      $(window).on('hashchange', function() {
-        location.reload();
-        $(this).scrollTop(0);
-      });
-
-      if (!hash)
-        hash = "/";
-      $('[route][route!="' + hash + '"]').remove();
-      $('#posts').show();
-
-      // Pagination
-      
-
-      
-
-      
-        if (hash == "/")  {
-          window.location = "/tags/";
-          return;
-        }
-
-        
-        
-
-        var maps = {  };
-        var dirs = hash.split("/");
-        var collection = decodeURIComponent(dirs[1]);
-        dirs.splice(0, 2);
-        hash = "/" + dirs.join("/");
-
-        if (!collection) {
-          window.location = "/tags/";
-          return;
-        }
-
-        $('.collection-title')[0].childNodes[1].childNodes[0].nodeValue = collection;
-        document.title = "Tag: " + collection + " | Chuan Code";
-
-        var sizes = maps[encodeURIComponent(collection)];
-        var base = "#" + "/" + collection;
-      
-
-      var current = 0;
-
-      if (hash != '/') {
-        
-
-        var reg = /(?:\/page(\d+))/;
-        var res = reg.exec(hash);
-
-        if (res && res[1])
-          current = parseInt(res[1]);
-      }
-      else {
-        current = 1;
-      }
-
-      var total = Math.floor(sizes / 10);
-      if (sizes % 10 > 0) {
-        total = total + 1;
-      }
-
-      if (total <= 1) {
-        $('nav.pagination').remove();
-      }
-      else {
-        var content = paginator({
-                          prev_text: '<i class="fa fa-angle-left"></i>',
-                          next_text: '<i class="fa fa-angle-right"></i>',
-                          current: current,
-                          total: total,
-                          base: base,
-                          format: "/page%d",
-                          mid_size: 1,
-                          end_size: 1
-                        });
-          $('nav.pagination').html(content);
-      }
-    })();
-  </script>
-
-
-  
 
   
 
