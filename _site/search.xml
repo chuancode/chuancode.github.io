@@ -2,6 +2,23 @@
 <search>
   
     <entry>
+      <title><![CDATA[Google Analytics API 使用]]></title>
+      <url>/google%20analytics/python/2019/10/15/ga-api01/</url>
+      <content type="text"><![CDATA[開啟 Google Analytics API至 Google Developers Console  新建專案在API和服務的資訊主頁中點選啟用API和服務啟用API搜尋 Analytics API ， 開啟 Google Analytics Reporting API建立憑證在 API和服務的憑證頁面中建立新的憑證選取 OAuth 用戶端 ID 憑證建立 OAuth 用戶端 ID建立完成後下載 json檔案API 測試資料檢視IDGoogle Analytics 網頁 ➜ 管理 ➜ 資料檢視設定 ➜ 資料檢視ID利用 Python 測試更改：☑ CLIENT_SECRETS_PATH =  ‘ json檔案路徑 ‘ ☑ VIEW_ID = ‘ Google Analytics 資料檢視ID ‘結果]]></content>
+      <categories>
+        
+          <category> Google Analytics </category>
+        
+          <category> Python </category>
+        
+      </categories>
+      <tags>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[Google Tag Manager 抓取 Client Id]]></title>
       <url>/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/</url>
       <content type="text"><![CDATA[Client Id 是？當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)如何利用 GTM 取得 Client Id設置自定義維度Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度GTM設置新變數☑ 變數類型；自訂JavaScript建立觸發條件☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )☑ 這項觸發條件的啟動時機：部分的載入視窗事件建立代碼 ( Tags )在 Google Analytics 查看再次要維度中選擇自定義維度的名稱]]></content>
