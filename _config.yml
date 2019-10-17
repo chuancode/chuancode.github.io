@@ -12,6 +12,8 @@ author: chuan
 language: en
 date_format: '%Y-%m-%d'
 
+future: false
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
 url:
