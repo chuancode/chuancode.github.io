@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="" />
+  <meta name="keywords" content="mondodb,mongodb atlas," />
 
 
 
@@ -109,23 +109,20 @@
 
 
 
-<meta name="description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
-<meta name="keywords" content="Jekyll, NexT">
+<meta name="description" content="將本地的 MongoDB 轉移至 雲端">
+<meta name="keywords" content="mondodb, mongodb atlas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AWS 使用 Ubuntu Linux">
-<meta property="og:url" content="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">
+<meta property="og:title" content="MongoDB 本地資料庫移至 MongoDB Atlas">
+<meta property="og:url" content="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
+<meta property="og:description" content="將本地的 MongoDB 轉移至 雲端">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/awsubun-1.png">
-<meta property="og:image" content="/assets/images/post/awsubun-2.png">
-<meta property="og:image" content="/assets/images/post/awsubun-3.png">
-<meta property="og:image" content="/assets/images/post/awsubun-4.png">
-<meta property="og:image" content="/assets/images/post/awsubun-5.png">
+<meta property="og:image" content="/assets/images/post/altas-1.png">
+<meta property="og:image" content="/assets/images/post/altas-2.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AWS 使用 Ubuntu Linux">
-<meta name="twitter:description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
-<meta name="twitter:image" content="/assets/images/post/awsubun-1.png">
+<meta name="twitter:title" content="MongoDB 本地資料庫移至 MongoDB Atlas">
+<meta name="twitter:description" content="將本地的 MongoDB 轉移至 雲端">
+<meta name="twitter:image" content="/assets/images/post/altas-1.png">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -158,7 +155,7 @@
 
 
 
-  <title>AWS 使用 Ubuntu Linux | Chuan Code</title>
+  <title>MongoDB 本地資料庫移至 MongoDB Atlas | Chuan Code</title>
   
 
 
@@ -334,7 +331,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -354,7 +351,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            AWS 使用 Ubuntu Linux
+            MongoDB 本地資料庫移至 MongoDB Atlas
           
         </h1>
         
@@ -368,8 +365,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-17T00:00:00+08:00">
-                2019-10-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-20T00:00:00+08:00">
+                2019-10-20
               </time>
             
 
@@ -392,20 +389,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/AWS" itemprop="url" rel="index">
-                    <span itemprop="name">AWS</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Ubuntu" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/category/#/MongoDB" itemprop="url" rel="index">
+                    <span itemprop="name">MongoDB</span>
                   </a>
                 </span>
 
@@ -429,7 +414,7 @@
           
             
                 <div class="post-description">
-                    AWS 啟用 Ubuntu Linux GUI (win10)
+                    將本地的 MongoDB 轉移至 雲端
                 </div>
             
           
@@ -459,106 +444,65 @@
 
 
 
-  <h2 id="在aws-開啟-ubuntu">在AWS 開啟 Ubuntu</h2>
-<p>EC2 資訊：<br />
-☑ AMI : Ubuntu Server 16.04 <br />
-☑ Instance Type : t2.medium</p>
+  <h2 id="新增使用者">新增使用者</h2>
 
-<h2 id="下載-putty">下載 <a herf="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></h2>
+<p>使用 admin 資料庫，新增 root 權限使用者</p>
 
-<h2 id="putty-設定">Putty 設定</h2>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>&gt;use admin
 
-<h3 id="ip">IP</h3>
-
-<p>PuTTY Configuration ➜ Session ➜ Host Name</p>
-
-<p>將 AWS 資訊欄中 IPv4 Public IP 填入 Host Name</p>
-
-<p><img src="/assets/images/post/awsubun-1.png" alt="awsubun-1" /></p>
-
-<p><img src="/assets/images/post/awsubun-2.png" alt="awsubun-2" /></p>
-
-<h3 id="pem-至-ppk">.pem 至 .ppk</h3>
-
-<h4 id="開啟-puttygen-點選-load">開啟 PuTTYgen 點選 Load</h4>
-
-<p>載入 Ubuntu 的 .pem 檔案</p>
-
-<p><img src="/assets/images/post/awsubun-3.png" alt="awsubun-3" /></p>
-
-<h4 id="成功匯入畫面">成功匯入畫面</h4>
-
-<p><img src="/assets/images/post/awsubun-4.png" alt="awsubun-4" /></p>
-
-<h4 id="點選-save-private-key">點選 Save private key</h4>
-
-<p>將匯出 .ppk 檔案</p>
-
-<h3 id="putty-載入-ppk">Putty 載入 .ppk</h3>
-
-<p>PuTTY Configuration ➜ Connection ➜ SSH ➜ Auth ➜ Authentication parameters</p>
-
-<p>點選 Browse… 載入 .ppk</p>
-
-<h3 id="儲存並開啟-session">儲存並開啟 Session</h3>
-
-<p>PuTTY Configuration ➜ Session ➜ Saved Sessions ➜ Open</p>
-
-<h3 id="終端機指令">終端機指令</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>login as: ubuntu
+&gt;db.createUser(
+      {
+          user: "admin",
+          pwd: "admin",
+          roles: [ "root" ]
+      }
+  )
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt update &amp;&amp;  sudo apt upgrade
+<h2 id="資料庫處理">資料庫處理</h2>
+
+<p>選擇要匯出的資料庫</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>mongodump --host 127.0.0.1
+  --port 27017
+  -u &lt;使用者名稱&gt;
+  --authenticationDatabase admin
+  --db &lt;匯出資料庫名稱&gt;
+  -o &lt;匯出路徑&gt;
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+<p>成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json</p>
+
+<h2 id="資料庫載入到-mongodb-altas">資料庫載入到 MongoDB Altas</h2>
+
+<h3 id="在-mongodb-altas-創建-clusters">在 MongoDB Altas 創建 Clusters</h3>
+
+<h3 id="資料庫匯入-clusters">資料庫匯入 Clusters</h3>
+
+<p>Clusters ➜ … ➜ Command Line Tools</p>
+
+<p><img src="/assets/images/post/altas-1.png" alt="altas-1" /></p>
+
+<p>複製 mongorestore 下的程式碼，更改為下 ↓</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>mongorestore
+  --host &lt;host&gt;
+  --ssl
+  --username &lt;USERNAME&gt;
+  --password &lt;PASSWORD&gt;
+  --authenticationDatabase admin
+  --db &lt;資料庫名稱&gt; C:\Users... &lt;資料庫路徑&gt;
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo /etc/init.d/ssh restart
-</code></pre></td></tr></tbody></table></div></div>
+<h2 id="結果">結果</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo passwd ubuntu #enter password
-</code></pre></td></tr></tbody></table></div></div>
+<p>在 Sandbox 中點擊 Collections</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
-</code></pre></td></tr></tbody></table></div></div>
+<p>在此頁面若是成功上傳資料庫則會顯示於此</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>echo xfce4-session&gt; /home/ubuntu/.xsession
-</code></pre></td></tr></tbody></table></div></div>
+<p><img src="/assets/images/post/altas-2.png" alt="altas-2" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo cp /home/ubuntu/.xsession /etc/skel
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo service xrdp restart
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo reboot
-</code></pre></td></tr></tbody></table></div></div>
-
-<h3 id="tunnels-設定">Tunnels 設定</h3>
-
-<p>PuTTY Configuration ➜ Connection ➜ SSH ➜ Tunnels</p>
-
-<p>☑ Source port 8888 <br />
-☑ Destination <AWS 資訊欄中="" Private="" IPs="">:3389</AWS></p>
-
-<p>➜ Add</p>
-
-<p><img src="/assets/images/post/awsubun-5.png" alt="awsubun-5" /></p>
-
-<h3 id="儲存並再次開啟-session">儲存並再次開啟 Session</h3>
-
-<p>利用 <code class="highlighter-rouge">netstat -antp</code> 檢查 :3389 是否開啟</p>
-
-<h3 id="開啟遠端桌面連線">開啟遠端桌面連線</h3>
-
-<p>IP 127.0.0.1:8888 進入 Ubuntu 介面</p>
-
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/aws/ubuntu/2019/10/17/aws-ubuntu/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/mongodb/2019/10/20/mongodbtoaltas/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -587,6 +531,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/mondodb" rel="tag"># mondodb</a>
+          
+            
+            <a href="/tag/#/mongodb%20atlas" rel="tag"># mongodb atlas</a>
+          
+        </div>
+      
 
       
       
@@ -599,18 +553,14 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jekyll/gitpages/2019/10/18/jekylltheme/" rel="next" title="Github Pages 使用 Jekyll 網頁模版">
-                <i class="fa fa-chevron-left"></i> Github Pages 使用 Jekyll 網頁模版
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/16/ga-api02/" rel="prev" title="Google Analytics API 維度與指標的使用">
-                Google Analytics API 維度與指標的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/jekyll/gitpages/2019/10/18/jekylltheme/" rel="prev" title="Github Pages 使用 Jekyll 網頁模版">
+                Github Pages 使用 Jekyll 網頁模版 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -761,7 +711,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#在aws-開啟-ubuntu"> <span class="nav-number">1</span> <span class="nav-text">在AWS 開啟 Ubuntu</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#下載-putty"> <span class="nav-number">2</span> <span class="nav-text">下載 Putty</a</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#putty-設定"> <span class="nav-number">3</span> <span class="nav-text">Putty 設定</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ip"> <span class="nav-number">3.1</span> <span class="nav-text">IP</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#pem-至-ppk"> <span class="nav-number">3.2</span> <span class="nav-text">.pem 至 .ppk</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#開啟-puttygen-點選-load"> <span class="nav-number">3.2.1</span> <span class="nav-text">開啟 PuTTYgen 點選 Load</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#成功匯入畫面"> <span class="nav-number">3.2.2</span> <span class="nav-text">成功匯入畫面</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#點選-save-private-key"> <span class="nav-number">3.2.3</span> <span class="nav-text">點選 Save private key</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#putty-載入-ppk"> <span class="nav-number">3.3</span> <span class="nav-text">Putty 載入 .ppk</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#儲存並開啟-session"> <span class="nav-number">3.4</span> <span class="nav-text">儲存並開啟 Session</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#終端機指令"> <span class="nav-number">3.5</span> <span class="nav-text">終端機指令</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#tunnels-設定"> <span class="nav-number">3.6</span> <span class="nav-text">Tunnels 設定</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#儲存並再次開啟-session"> <span class="nav-number">3.7</span> <span class="nav-text">儲存並再次開啟 Session</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#開啟遠端桌面連線"> <span class="nav-number">3.8</span> <span class="nav-text">開啟遠端桌面連線</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#新增使用者"> <span class="nav-number">1</span> <span class="nav-text">新增使用者</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#資料庫處理"> <span class="nav-number">2</span> <span class="nav-text">資料庫處理</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#資料庫載入到-mongodb-altas"> <span class="nav-number">3</span> <span class="nav-text">資料庫載入到 MongoDB Altas</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#在-mongodb-altas-創建-clusters"> <span class="nav-number">3.1</span> <span class="nav-text">在 MongoDB Altas 創建 Clusters</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#資料庫匯入-clusters"> <span class="nav-number">3.2</span> <span class="nav-text">資料庫匯入 Clusters</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#結果"> <span class="nav-number">4</span> <span class="nav-text">結果</span> </a> </li>
     </ol>
   </div>
             

@@ -109,23 +109,17 @@
 
 
 
-<meta name="description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
+<meta name="description" content="使用 Jekyll Themes 網頁模版搭建 Github Pages (Mac OS)">
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AWS 使用 Ubuntu Linux">
-<meta property="og:url" content="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">
+<meta property="og:title" content="Github Pages 使用 Jekyll 網頁模版">
+<meta property="og:url" content="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
+<meta property="og:description" content="使用 Jekyll Themes 網頁模版搭建 Github Pages (Mac OS)">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/awsubun-1.png">
-<meta property="og:image" content="/assets/images/post/awsubun-2.png">
-<meta property="og:image" content="/assets/images/post/awsubun-3.png">
-<meta property="og:image" content="/assets/images/post/awsubun-4.png">
-<meta property="og:image" content="/assets/images/post/awsubun-5.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AWS 使用 Ubuntu Linux">
-<meta name="twitter:description" content="AWS 啟用 Ubuntu Linux GUI (win10)">
-<meta name="twitter:image" content="/assets/images/post/awsubun-1.png">
+<meta name="twitter:title" content="Github Pages 使用 Jekyll 網頁模版">
+<meta name="twitter:description" content="使用 Jekyll Themes 網頁模版搭建 Github Pages (Mac OS)">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -158,7 +152,7 @@
 
 
 
-  <title>AWS 使用 Ubuntu Linux | Chuan Code</title>
+  <title>Github Pages 使用 Jekyll 網頁模版 | Chuan Code</title>
   
 
 
@@ -334,7 +328,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -354,7 +348,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            AWS 使用 Ubuntu Linux
+            Github Pages 使用 Jekyll 網頁模版
           
         </h1>
         
@@ -368,8 +362,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-17T00:00:00+08:00">
-                2019-10-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-18T00:00:00+08:00">
+                2019-10-18
               </time>
             
 
@@ -392,8 +386,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/AWS" itemprop="url" rel="index">
-                    <span itemprop="name">AWS</span>
+                  <a href="/category/#/Jekyll" itemprop="url" rel="index">
+                    <span itemprop="name">Jekyll</span>
                   </a>
                 </span>
 
@@ -404,8 +398,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Ubuntu" itemprop="url" rel="index">
-                    <span itemprop="name">Ubuntu</span>
+                  <a href="/category/#/GitPages" itemprop="url" rel="index">
+                    <span itemprop="name">GitPages</span>
                   </a>
                 </span>
 
@@ -429,7 +423,7 @@
           
             
                 <div class="post-description">
-                    AWS 啟用 Ubuntu Linux GUI (win10)
+                    使用 Jekyll Themes 網頁模版搭建 Github Pages (Mac OS)
                 </div>
             
           
@@ -459,106 +453,72 @@
 
 
 
-  <h2 id="在aws-開啟-ubuntu">在AWS 開啟 Ubuntu</h2>
-<p>EC2 資訊：<br />
-☑ AMI : Ubuntu Server 16.04 <br />
-☑ Instance Type : t2.medium</p>
+  <h2 id="在-jekyll-themes-選擇喜歡的模板">在 <a herf="http://jekyllthemes.org/">Jekyll Themes</a> 選擇喜歡的模板</h2>
 
-<h2 id="下載-putty">下載 <a herf="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></h2>
+<p>以 <a herf="http://jekyllthemes.org/themes/Minimal-Resume/">Minimal Resume</a> 為例</p>
 
-<h2 id="putty-設定">Putty 設定</h2>
+<h2 id="終端機指令">終端機指令</h2>
 
-<h3 id="ip">IP</h3>
+<h3 id="檢查是否安裝-ruby">檢查是否安裝 Ruby</h3>
 
-<p>PuTTY Configuration ➜ Session ➜ Host Name</p>
-
-<p>將 AWS 資訊欄中 IPv4 Public IP 填入 Host Name</p>
-
-<p><img src="/assets/images/post/awsubun-1.png" alt="awsubun-1" /></p>
-
-<p><img src="/assets/images/post/awsubun-2.png" alt="awsubun-2" /></p>
-
-<h3 id="pem-至-ppk">.pem 至 .ppk</h3>
-
-<h4 id="開啟-puttygen-點選-load">開啟 PuTTYgen 點選 Load</h4>
-
-<p>載入 Ubuntu 的 .pem 檔案</p>
-
-<p><img src="/assets/images/post/awsubun-3.png" alt="awsubun-3" /></p>
-
-<h4 id="成功匯入畫面">成功匯入畫面</h4>
-
-<p><img src="/assets/images/post/awsubun-4.png" alt="awsubun-4" /></p>
-
-<h4 id="點選-save-private-key">點選 Save private key</h4>
-
-<p>將匯出 .ppk 檔案</p>
-
-<h3 id="putty-載入-ppk">Putty 載入 .ppk</h3>
-
-<p>PuTTY Configuration ➜ Connection ➜ SSH ➜ Auth ➜ Authentication parameters</p>
-
-<p>點選 Browse… 載入 .ppk</p>
-
-<h3 id="儲存並開啟-session">儲存並開啟 Session</h3>
-
-<p>PuTTY Configuration ➜ Session ➜ Saved Sessions ➜ Open</p>
-
-<h3 id="終端機指令">終端機指令</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>login as: ubuntu
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>ruby --version
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt update &amp;&amp;  sudo apt upgrade
+<h3 id="下載-ruby">下載 Ruby</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>brew install ruby
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+<h3 id="下載-bundler">下載 Bundler</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>gem install bundler
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo /etc/init.d/ssh restart
+<h3 id="下載模板">下載模板</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>git clone https://github.com/murraco/jekyll-theme-minimal-resume.git
+cd jekyll-theme-minimal-resume
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo passwd ubuntu #enter password
+<h3 id="下載-jekyll-與附屬檔案">下載 Jekyll 與附屬檔案</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>bundle install
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
+<h3 id="在本地執行網頁">在本地執行網頁</h3>
+
+<p>基本指令，網站將開在 127.0.0.1:4000</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>bundle exec jekyll serve
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>echo xfce4-session&gt; /home/ubuntu/.xsession
+<p>開在指定IP</p>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>bundle exec jekyll serve --port 8080
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo cp /home/ubuntu/.xsession /etc/skel
+<h2 id="部落格資料夾用途">部落格資料夾用途</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>|-- _config.yml
+|-- _posts/
+|-- _site/
+|-- 404.html
+|-- about.md
+|-- Gemfile
+|-- Gemfile.lock
+|_  index.md
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
-</code></pre></td></tr></tbody></table></div></div>
+<p>_config.yml   ➜   基本網頁配置 <br />
+_posts   ➜   網頁文章 <br />
+_site   ➜   <br />
+404.html   ➜   錯誤頁面 <br />
+about.md   ➜   關於頁面 <br />
+index.md   ➜   主頁面 <br />
+Gemfile   ➜   Ruby 代碼集合 <br />
+Gemfile.lock   ➜   所有安裝的的版本資訊</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo service xrdp restart
-</code></pre></td></tr></tbody></table></div></div>
-
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo reboot
-</code></pre></td></tr></tbody></table></div></div>
-
-<h3 id="tunnels-設定">Tunnels 設定</h3>
-
-<p>PuTTY Configuration ➜ Connection ➜ SSH ➜ Tunnels</p>
-
-<p>☑ Source port 8888 <br />
-☑ Destination <AWS 資訊欄中="" Private="" IPs="">:3389</AWS></p>
-
-<p>➜ Add</p>
-
-<p><img src="/assets/images/post/awsubun-5.png" alt="awsubun-5" /></p>
-
-<h3 id="儲存並再次開啟-session">儲存並再次開啟 Session</h3>
-
-<p>利用 <code class="highlighter-rouge">netstat -antp</code> 檢查 :3389 是否開啟</p>
-
-<h3 id="開啟遠端桌面連線">開啟遠端桌面連線</h3>
-
-<p>IP 127.0.0.1:8888 進入 Ubuntu 介面</p>
-
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/aws/ubuntu/2019/10/17/aws-ubuntu/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/gitpages/2019/10/18/jekylltheme/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -599,8 +559,8 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/jekyll/gitpages/2019/10/18/jekylltheme/" rel="next" title="Github Pages 使用 Jekyll 網頁模版">
-                <i class="fa fa-chevron-left"></i> Github Pages 使用 Jekyll 網頁模版
+              <a href="/mongodb/2019/10/20/mongodbtoaltas/" rel="next" title="MongoDB 本地資料庫移至 MongoDB Atlas">
+                <i class="fa fa-chevron-left"></i> MongoDB 本地資料庫移至 MongoDB Atlas
               </a>
             
           </div>
@@ -609,8 +569,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/16/ga-api02/" rel="prev" title="Google Analytics API 維度與指標的使用">
-                Google Analytics API 維度與指標的使用 <i class="fa fa-chevron-right"></i>
+              <a href="/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="prev" title="AWS 使用 Ubuntu Linux">
+                AWS 使用 Ubuntu Linux <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -761,7 +721,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#在aws-開啟-ubuntu"> <span class="nav-number">1</span> <span class="nav-text">在AWS 開啟 Ubuntu</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#下載-putty"> <span class="nav-number">2</span> <span class="nav-text">下載 Putty</a</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#putty-設定"> <span class="nav-number">3</span> <span class="nav-text">Putty 設定</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ip"> <span class="nav-number">3.1</span> <span class="nav-text">IP</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#pem-至-ppk"> <span class="nav-number">3.2</span> <span class="nav-text">.pem 至 .ppk</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#開啟-puttygen-點選-load"> <span class="nav-number">3.2.1</span> <span class="nav-text">開啟 PuTTYgen 點選 Load</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#成功匯入畫面"> <span class="nav-number">3.2.2</span> <span class="nav-text">成功匯入畫面</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#點選-save-private-key"> <span class="nav-number">3.2.3</span> <span class="nav-text">點選 Save private key</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#putty-載入-ppk"> <span class="nav-number">3.3</span> <span class="nav-text">Putty 載入 .ppk</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#儲存並開啟-session"> <span class="nav-number">3.4</span> <span class="nav-text">儲存並開啟 Session</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#終端機指令"> <span class="nav-number">3.5</span> <span class="nav-text">終端機指令</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#tunnels-設定"> <span class="nav-number">3.6</span> <span class="nav-text">Tunnels 設定</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#儲存並再次開啟-session"> <span class="nav-number">3.7</span> <span class="nav-text">儲存並再次開啟 Session</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#開啟遠端桌面連線"> <span class="nav-number">3.8</span> <span class="nav-text">開啟遠端桌面連線</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-jekyll-themes-選擇喜歡的模板"> <span class="nav-number">1</span> <span class="nav-text">在 Jekyll Themes 選擇喜歡的模板</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#終端機指令"> <span class="nav-number">2</span> <span class="nav-text">終端機指令</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#檢查是否安裝-ruby"> <span class="nav-number">2.1</span> <span class="nav-text">檢查是否安裝 Ruby</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#下載-ruby"> <span class="nav-number">2.2</span> <span class="nav-text">下載 Ruby</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#下載-bundler"> <span class="nav-number">2.3</span> <span class="nav-text">下載 Bundler</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#下載模板"> <span class="nav-number">2.4</span> <span class="nav-text">下載模板</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#下載-jekyll-與附屬檔案"> <span class="nav-number">2.5</span> <span class="nav-text">下載 Jekyll 與附屬檔案</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#在本地執行網頁"> <span class="nav-number">2.6</span> <span class="nav-text">在本地執行網頁</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#部落格資料夾用途"> <span class="nav-number">3</span> <span class="nav-text">部落格資料夾用途</span> </a> </li>
     </ol>
   </div>
             

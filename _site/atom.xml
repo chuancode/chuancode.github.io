@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-17T14:59:08+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">AWS 使用 Ubuntu Linux</title><link href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="alternate" type="text/html" title="AWS 使用 Ubuntu Linux" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu</id><content type="html" xml:base="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">&lt;h2 id=&quot;在aws-開啟-ubuntu&quot;&gt;在AWS 開啟 Ubuntu&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-17T17:24:50+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">MongoDB 本地資料庫移至 MongoDB Atlas</title><link href="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/" rel="alternate" type="text/html" title="MongoDB 本地資料庫移至 MongoDB Atlas" /><published>2019-10-20T00:00:00+08:00</published><updated>2019-10-20T00:00:00+08:00</updated><id>http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas</id><content type="html" xml:base="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">&lt;h2 id=&quot;新增使用者&quot;&gt;新增使用者&lt;/h2&gt;
+
+&lt;p&gt;使用 admin 資料庫，新增 root 權限使用者&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;use admin
+
+&amp;gt;db.createUser(
+      {
+          user: &quot;admin&quot;,
+          pwd: &quot;admin&quot;,
+          roles: [ &quot;root&quot; ]
+      }
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;資料庫處理&quot;&gt;資料庫處理&lt;/h2&gt;
+
+&lt;p&gt;選擇要匯出的資料庫&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongodump --host 127.0.0.1
+  --port 27017
+  -u &amp;lt;使用者名稱&amp;gt;
+  --authenticationDatabase admin
+  --db &amp;lt;匯出資料庫名稱&amp;gt;
+  -o &amp;lt;匯出路徑&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json&lt;/p&gt;
+
+&lt;h2 id=&quot;資料庫載入到-mongodb-altas&quot;&gt;資料庫載入到 MongoDB Altas&lt;/h2&gt;
+
+&lt;h3 id=&quot;在-mongodb-altas-創建-clusters&quot;&gt;在 MongoDB Altas 創建 Clusters&lt;/h3&gt;
+
+&lt;h3 id=&quot;資料庫匯入-clusters&quot;&gt;資料庫匯入 Clusters&lt;/h3&gt;
+
+&lt;p&gt;Clusters ➜ … ➜ Command Line Tools&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/altas-1.png&quot; alt=&quot;altas-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;複製 mongorestore 下的程式碼，更改為下 ↓&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongorestore
+  --host &amp;lt;host&amp;gt;
+  --ssl
+  --username &amp;lt;USERNAME&amp;gt;
+  --password &amp;lt;PASSWORD&amp;gt;
+  --authenticationDatabase admin
+  --db &amp;lt;資料庫名稱&amp;gt; C:\Users... &amp;lt;資料庫路徑&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;結果&quot;&gt;結果&lt;/h2&gt;
+
+&lt;p&gt;在 Sandbox 中點擊 Collections&lt;/p&gt;
+
+&lt;p&gt;在此頁面若是成功上傳資料庫則會顯示於此&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/altas-2.png&quot; alt=&quot;altas-2&quot; /&gt;&lt;/p&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/mongodb/2019/10/20/mongodbtoaltas/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><category term="mondodb" /><category term="mongodb atlas" /><summary type="html">新增使用者</summary></entry><entry><title type="html">Github Pages 使用 Jekyll 網頁模版</title><link href="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/" rel="alternate" type="text/html" title="Github Pages 使用 Jekyll 網頁模版" /><published>2019-10-18T00:00:00+08:00</published><updated>2019-10-18T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme</id><content type="html" xml:base="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/">&lt;h2 id=&quot;在-jekyll-themes-選擇喜歡的模板&quot;&gt;在 &lt;a herf=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt; 選擇喜歡的模板&lt;/h2&gt;
+
+&lt;p&gt;以 &lt;a herf=&quot;http://jekyllthemes.org/themes/Minimal-Resume/&quot;&gt;Minimal Resume&lt;/a&gt; 為例&lt;/p&gt;
+
+&lt;h2 id=&quot;終端機指令&quot;&gt;終端機指令&lt;/h2&gt;
+
+&lt;h3 id=&quot;檢查是否安裝-ruby&quot;&gt;檢查是否安裝 Ruby&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-ruby&quot;&gt;下載 Ruby&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-bundler&quot;&gt;下載 Bundler&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載模板&quot;&gt;下載模板&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/murraco/jekyll-theme-minimal-resume.git
+cd jekyll-theme-minimal-resume
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-jekyll-與附屬檔案&quot;&gt;下載 Jekyll 與附屬檔案&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;在本地執行網頁&quot;&gt;在本地執行網頁&lt;/h3&gt;
+
+&lt;p&gt;基本指令，網站將開在 127.0.0.1:4000&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;開在指定IP&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve --port 8080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;部落格資料夾用途&quot;&gt;部落格資料夾用途&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|-- _config.yml
+|-- _posts/
+|-- _site/
+|-- 404.html
+|-- about.md
+|-- Gemfile
+|-- Gemfile.lock
+|_  index.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;_config.yml   ➜   基本網頁配置 &lt;br /&gt;
+_posts   ➜   網頁文章 &lt;br /&gt;
+_site   ➜   &lt;br /&gt;
+404.html   ➜   錯誤頁面 &lt;br /&gt;
+about.md   ➜   關於頁面 &lt;br /&gt;
+index.md   ➜   主頁面 &lt;br /&gt;
+Gemfile   ➜   Ruby 代碼集合 &lt;br /&gt;
+Gemfile.lock   ➜   所有安裝的的版本資訊&lt;/p&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/gitpages/2019/10/18/jekylltheme/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">在 Jekyll Themes 選擇喜歡的模板</summary></entry><entry><title type="html">AWS 使用 Ubuntu Linux</title><link href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="alternate" type="text/html" title="AWS 使用 Ubuntu Linux" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu</id><content type="html" xml:base="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">&lt;h2 id=&quot;在aws-開啟-ubuntu&quot;&gt;在AWS 開啟 Ubuntu&lt;/h2&gt;
 &lt;p&gt;EC2 資訊：&lt;br /&gt;
 ☑ AMI : Ubuntu Server 16.04 &lt;br /&gt;
 ☑ Instance Type : t2.medium&lt;/p&gt;
