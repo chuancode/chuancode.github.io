@@ -115,3 +115,5 @@ PuTTY Configuration &#10140; Connection &#10140; SSH &#10140; Tunnels
 ### 開啟遠端桌面連線
 
 IP 127.0.0.1:8888 進入 Ubuntu 介面
+
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/aws/ubuntu/2019/10/17/aws-ubuntu/" frameborder="0" scrolling = "no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
