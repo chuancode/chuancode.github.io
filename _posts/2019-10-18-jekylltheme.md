@@ -80,4 +80,4 @@ index.md &nbsp; &#10140; &nbsp; 主頁面 <br>
 Gemfile &nbsp; &#10140; &nbsp; Ruby 代碼集合 <br>
 Gemfile.lock &nbsp; &#10140; &nbsp; 所有安裝的的版本資訊
 
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/gitpages/2019/10/17/jekylltheme/" frameborder="0" scrolling = "no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/gitpages/2019/10/18/jekylltheme/" frameborder="0" scrolling = "no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
