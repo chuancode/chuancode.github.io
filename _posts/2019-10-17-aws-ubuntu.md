@@ -51,7 +51,7 @@ PuTTY Configuration &#10140; Connection &#10140; SSH &#10140; Auth &#10140; Auth
 
 PuTTY Configuration &#10140; Session &#10140; Saved Sessions &#10140; Open
 
-### cmd 指令
+### 終端機指令
 
 ```
 login as: ubuntu
