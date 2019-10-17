@@ -109,23 +109,19 @@
 
 
 
-<meta name="description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
+<meta name="description" content="利用 Google Analytics API 配合維度與指標的改變來擷取更多資料">
 <meta name="keywords" content="Jekyll, NexT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Tag Manager 抓取 Client Id">
-<meta property="og:url" content="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+<meta property="og:title" content="Google Analytics API 維度與指標的使用">
+<meta property="og:url" content="http://localhost:4000/google%20analytics/python/2019/10/16/ga-api02/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
+<meta property="og:description" content="利用 Google Analytics API 配合維度與指標的改變來擷取更多資料">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/cid-1.png">
-<meta property="og:image" content="/assets/images/post/cid-2.png">
-<meta property="og:image" content="/assets/images/post/cid-3.png">
-<meta property="og:image" content="/assets/images/post/cid-4.png">
-<meta property="og:image" content="/assets/images/post/cid-5.png">
+<meta property="og:image" content="/assets/images/post/gaapi2-1.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Tag Manager 抓取 Client Id">
-<meta name="twitter:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
-<meta name="twitter:image" content="/assets/images/post/cid-1.png">
+<meta name="twitter:title" content="Google Analytics API 維度與指標的使用">
+<meta name="twitter:description" content="利用 Google Analytics API 配合維度與指標的改變來擷取更多資料">
+<meta name="twitter:image" content="/assets/images/post/gaapi2-1.png">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -158,7 +154,7 @@
 
 
 
-  <title>Google Tag Manager 抓取 Client Id | Chuan Code</title>
+  <title>Google Analytics API 維度與指標的使用 | Chuan Code</title>
   
 
 
@@ -300,7 +296,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/google%20analytics/python/2019/10/16/ga-api02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -320,7 +316,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Google Tag Manager 抓取 Client Id
+            Google Analytics API 維度與指標的使用
           
         </h1>
         
@@ -334,8 +330,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">
-                2019-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-16T00:00:00+08:00">
+                2019-10-16
               </time>
             
 
@@ -370,8 +366,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Tag%20Manager" itemprop="url" rel="index">
-                    <span itemprop="name">Google Tag Manager</span>
+                  <a href="/category/#/Python" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -395,7 +391,7 @@
           
             
                 <div class="post-description">
-                    利用 Tag Manager 追蹤 Google Analytics Client Id
+                    利用 Google Analytics API 配合維度與指標的改變來擷取更多資料
                 </div>
             
           
@@ -425,44 +421,29 @@
 
 
 
-  <h2 id="client-id-是">Client Id 是？</h2>
+  <h2 id="google-analytics-demo--tools"><a herf="https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/">Google Analytics Demo &amp; Tools</a></h2>
 
-<p>當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)</p>
+<p>利用此網站查詢相對應的維度與指標</p>
 
-<h2 id="如何利用-gtm-取得-client-id">如何利用 GTM 取得 Client Id</h2>
+<p><img src="/assets/images/post/gaapi2-1.png" alt="gaapi2-1" /></p>
 
-<h3 id="設置自定義維度">設置自定義維度</h3>
+<p>❢ 利用 <a herf="https://ga-dev-tools.appspot.com/query-explorer/"> Query Explor </a>可以直接使用維度與指標抓取資料</p>
 
-<p>Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度</p>
+<h2 id="python-使用-維度與指標">Python 使用 維度與指標</h2>
 
-<p><img src="/assets/images/post/cid-1.png" alt="cid-1" /></p>
+<h3 id="顯示七天前的數據">顯示七天前的數據</h3>
 
-<h3 id="gtm設置新變數">GTM設置新變數</h3>
+<script src="https://gist.github.com/chuan520/af425cada3fd5d72cb4ffa10eb0ef443.js"></script>
 
-<p>☑ 變數類型；自訂JavaScript</p>
+<h3 id="顯示一段期間的數據">顯示一段期間的數據</h3>
 
-<script src="https://gist.github.com/chuan520/ed0a4b7784969ec26626d6d0c632f62f.js"></script>
+<script src="https://gist.github.com/chuan520/d33106e26b012adaa11b6b14c04b0b43.js"></script>
 
-<p><img src="/assets/images/post/cid-2.png" alt="cid-2" /></p>
+<h3 id="使用自訂義維度">使用自訂義維度</h3>
 
-<h3 id="建立觸發條件">建立觸發條件</h3>
+<script src="https://gist.github.com/chuan520/1206e7e85ead7698646dbc7db0462e71.js"></script>
 
-<p>☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )
-☑ 這項觸發條件的啟動時機：部分的載入視窗事件</p>
-
-<p><img src="/assets/images/post/cid-3.png" alt="cid-3" /></p>
-
-<h3 id="建立代碼--tags-">建立代碼 ( Tags )</h3>
-
-<p><img src="/assets/images/post/cid-4.png" alt="cid-4" /></p>
-
-<h2 id="在-google-analytics-查看">在 Google Analytics 查看</h2>
-
-<p>再次要維度中選擇自定義維度的名稱</p>
-
-<p><img src="/assets/images/post/cid-5.png" alt="cid-5" /></p>
-
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/16/ga-api02/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -503,8 +484,8 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/15/ga-api01/" rel="next" title="Google Analytics API 使用">
-                <i class="fa fa-chevron-left"></i> Google Analytics API 使用
+              <a href="/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="next" title="AWS 使用 Ubuntu Linux">
+                <i class="fa fa-chevron-left"></i> AWS 使用 Ubuntu Linux
               </a>
             
           </div>
@@ -512,6 +493,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/google%20analytics/python/2019/10/15/ga-api01/" rel="prev" title="Google Analytics API 使用">
+                Google Analytics API 使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -652,7 +637,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#client-id-是"> <span class="nav-number">1</span> <span class="nav-text">Client Id 是？</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#如何利用-gtm-取得-client-id"> <span class="nav-number">2</span> <span class="nav-text">如何利用 GTM 取得 Client Id</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#設置自定義維度"> <span class="nav-number">2.1</span> <span class="nav-text">設置自定義維度</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#gtm設置新變數"> <span class="nav-number">2.2</span> <span class="nav-text">GTM設置新變數</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立觸發條件"> <span class="nav-number">2.3</span> <span class="nav-text">建立觸發條件</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立代碼--tags-"> <span class="nav-number">2.4</span> <span class="nav-text">建立代碼 ( Tags )</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-google-analytics-查看"> <span class="nav-number">3</span> <span class="nav-text">在 Google Analytics 查看</span> </a> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#google-analytics-demo--tools"> <span class="nav-number">1</span> <span class="nav-text">Google Analytics Demo &amp; Tools</a</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#python-使用-維度與指標"> <span class="nav-number">2</span> <span class="nav-text">Python 使用 維度與指標</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#顯示七天前的數據"> <span class="nav-number">2.1</span> <span class="nav-text">顯示七天前的數據</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#顯示一段期間的數據"> <span class="nav-number">2.2</span> <span class="nav-text">顯示一段期間的數據</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#使用自訂義維度"> <span class="nav-number">2.3</span> <span class="nav-text">使用自訂義維度</span> </a> </li> </ol> </li>
     </ol>
   </div>
             

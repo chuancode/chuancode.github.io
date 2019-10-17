@@ -1,4 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-15T16:48:02+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">Google Analytics API 使用</title><link href="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/" rel="alternate" type="text/html" title="Google Analytics API 使用" /><published>2019-10-15T00:00:00+08:00</published><updated>2019-10-15T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01</id><content type="html" xml:base="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/">&lt;h2 id=&quot;開啟-google-analytics-api&quot;&gt;開啟 Google Analytics API&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-17T11:51:51+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">AWS 使用 Ubuntu Linux</title><link href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="alternate" type="text/html" title="AWS 使用 Ubuntu Linux" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu</id><content type="html" xml:base="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">&lt;h2 id=&quot;在aws-開啟-ubuntu&quot;&gt;在AWS 開啟 Ubuntu&lt;/h2&gt;
+&lt;p&gt;EC2 資訊：&lt;br /&gt;
+☑ AMI : Ubuntu Server 16.04 &lt;br /&gt;
+☑ Instance Type : t2.medium&lt;/p&gt;
+
+&lt;h2 id=&quot;下載-putty&quot;&gt;下載 &lt;a herf=&quot;https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html&quot;&gt;Putty&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;putty-設定&quot;&gt;Putty 設定&lt;/h2&gt;
+
+&lt;h3 id=&quot;ip&quot;&gt;IP&lt;/h3&gt;
+
+&lt;p&gt;PuTTY Configuration ➜ Session ➜ Host Name&lt;/p&gt;
+
+&lt;p&gt;將 AWS 資訊欄中 IPv4 Public IP 填入 Host Name&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/awsubun-1.png&quot; alt=&quot;awsubun-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/awsubun-2.png&quot; alt=&quot;awsubun-2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pem-至-ppk&quot;&gt;.pem 至 .ppk&lt;/h3&gt;
+
+&lt;h4 id=&quot;開啟-puttygen-點選-load&quot;&gt;開啟 PuTTYgen 點選 Load&lt;/h4&gt;
+
+&lt;p&gt;載入 Ubuntu 的 .pem 檔案&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/awsubun-3.png&quot; alt=&quot;awsubun-3&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;成功匯入畫面&quot;&gt;成功匯入畫面&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/awsubun-4.png&quot; alt=&quot;awsubun-4&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;點選-save-private-key&quot;&gt;點選 Save private key&lt;/h4&gt;
+
+&lt;p&gt;將匯出 .ppk 檔案&lt;/p&gt;
+
+&lt;h3 id=&quot;putty-載入-ppk&quot;&gt;Putty 載入 .ppk&lt;/h3&gt;
+
+&lt;p&gt;PuTTY Configuration ➜ Connection ➜ SSH ➜ Auth ➜ Authentication parameters&lt;/p&gt;
+
+&lt;p&gt;點選 Browse… 載入 .ppk&lt;/p&gt;
+
+&lt;h3 id=&quot;儲存並開啟-session&quot;&gt;儲存並開啟 Session&lt;/h3&gt;
+
+&lt;p&gt;PuTTY Configuration ➜ Session ➜ Saved Sessions ➜ Open&lt;/p&gt;
+
+&lt;h3 id=&quot;cmd-指令&quot;&gt;cmd 指令&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;login as: ubuntu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp;  sudo apt upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo /etc/init.d/ssh restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo passwd ubuntu #enter password
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo xfce4-session&amp;gt; /home/ubuntu/.xsession
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo cp /home/ubuntu/.xsession /etc/skel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo service xrdp restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;tunnels-設定&quot;&gt;Tunnels 設定&lt;/h3&gt;
+
+&lt;p&gt;PuTTY Configuration ➜ Connection ➜ SSH ➜ Tunnels&lt;/p&gt;
+
+&lt;p&gt;☑ Source port 8888 &lt;br /&gt;
+☑ Destination &lt;AWS 資訊欄中=&quot;&quot; Private=&quot;&quot; IPs=&quot;&quot;&gt;:3389&lt;/AWS&gt;&lt;/p&gt;
+
+&lt;p&gt;➜ Add&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/awsubun-5.png&quot; alt=&quot;awsubun-5&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;儲存並再次開啟-session&quot;&gt;儲存並再次開啟 Session&lt;/h3&gt;
+
+&lt;p&gt;利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat -antp&lt;/code&gt; 檢查 :3389 是否開啟&lt;/p&gt;
+
+&lt;h3 id=&quot;開啟遠端桌面連線&quot;&gt;開啟遠端桌面連線&lt;/h3&gt;
+
+&lt;p&gt;IP 127.0.0.1:8888 進入 Ubuntu 介面&lt;/p&gt;</content><author><name>chuan</name></author><summary type="html">在AWS 開啟 Ubuntu EC2 資訊： ☑ AMI : Ubuntu Server 16.04 ☑ Instance Type : t2.medium</summary></entry><entry><title type="html">Google Analytics API 維度與指標的使用</title><link href="http://localhost:4000/google%20analytics/python/2019/10/16/ga-api02/" rel="alternate" type="text/html" title="Google Analytics API 維度與指標的使用" /><published>2019-10-16T00:00:00+08:00</published><updated>2019-10-16T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/python/2019/10/16/ga-api02</id><content type="html" xml:base="http://localhost:4000/google%20analytics/python/2019/10/16/ga-api02/">&lt;h2 id=&quot;google-analytics-demo--tools&quot;&gt;&lt;a herf=&quot;https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/&quot;&gt;Google Analytics Demo &amp;amp; Tools&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;利用此網站查詢相對應的維度與指標&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/gaapi2-1.png&quot; alt=&quot;gaapi2-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;❢ 利用 &lt;a herf=&quot;https://ga-dev-tools.appspot.com/query-explorer/&quot;&gt; Query Explor &lt;/a&gt;可以直接使用維度與指標抓取資料&lt;/p&gt;
+
+&lt;h2 id=&quot;python-使用-維度與指標&quot;&gt;Python 使用 維度與指標&lt;/h2&gt;
+
+&lt;h3 id=&quot;顯示七天前的數據&quot;&gt;顯示七天前的數據&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/chuan520/af425cada3fd5d72cb4ffa10eb0ef443.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;顯示一段期間的數據&quot;&gt;顯示一段期間的數據&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/chuan520/d33106e26b012adaa11b6b14c04b0b43.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;使用自訂義維度&quot;&gt;使用自訂義維度&lt;/h3&gt;
+
+&lt;script src=&quot;https://gist.github.com/chuan520/1206e7e85ead7698646dbc7db0462e71.js&quot;&gt;&lt;/script&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/16/ga-api02/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">Google Analytics Demo &amp;amp; Tools 利用此網站查詢相對應的維度與指標 ❢ 利用 Query Explor 可以直接使用維度與指標抓取資料 Python 使用 維度與指標 顯示七天前的數據 顯示一段期間的數據 使用自訂義維度</summary></entry><entry><title type="html">Google Analytics API 使用</title><link href="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/" rel="alternate" type="text/html" title="Google Analytics API 使用" /><published>2019-10-15T00:00:00+08:00</published><updated>2019-10-15T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01</id><content type="html" xml:base="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/">&lt;h2 id=&quot;開啟-google-analytics-api&quot;&gt;開啟 Google Analytics API&lt;/h2&gt;
 
 &lt;h3 id=&quot;至-google-developers-console--新建專案&quot;&gt;至&lt;a href=&quot;https://console.developers.google.com/project&quot;&gt; Google Developers Console &lt;/a&gt; 新建專案&lt;/h3&gt;
 
