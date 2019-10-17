@@ -2,42 +2,6 @@
 <search>
   
     <entry>
-      <title><![CDATA[MongoDB 本地資料庫移至 MongoDB Atlas]]></title>
-      <url>/mongodb/2019/10/20/mongodbtoaltas/</url>
-      <content type="text"><![CDATA[新增使用者使用 admin 資料庫，新增 root 權限使用者&gt;use admin&gt;db.createUser(      {          user: "admin",          pwd: "admin",          roles: [ "root" ]      }  )資料庫處理選擇要匯出的資料庫mongodump --host 127.0.0.1  --port 27017  -u &lt;使用者名稱&gt;  --authenticationDatabase admin  --db &lt;匯出資料庫名稱&gt;  -o &lt;匯出路徑&gt;成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json資料庫載入到 MongoDB Altas在 MongoDB Altas 創建 Clusters資料庫匯入 ClustersClusters ➜ … ➜ Command Line Tools複製 mongorestore 下的程式碼，更改為下 ↓mongorestore  --host &lt;host&gt;  --ssl  --username &lt;USERNAME&gt;  --password &lt;PASSWORD&gt;  --authenticationDatabase admin  --db &lt;資料庫名稱&gt; C:\Users... &lt;資料庫路徑&gt;結果在 Sandbox 中點擊 Collections在此頁面若是成功上傳資料庫則會顯示於此]]></content>
-      <categories>
-        
-          <category> MongoDB </category>
-        
-      </categories>
-      <tags>
-        
-          <tag> mondodb </tag>
-        
-          <tag> mongodb atlas </tag>
-        
-      </tags>
-      <tags></tags>
-    </entry>
-  
-    <entry>
-      <title><![CDATA[Github Pages 使用 Jekyll 網頁模版]]></title>
-      <url>/jekyll/gitpages/2019/10/18/jekylltheme/</url>
-      <content type="text"><![CDATA[在 Jekyll Themes 選擇喜歡的模板以 Minimal Resume 為例終端機指令檢查是否安裝 Rubyruby --version下載 Rubybrew install ruby下載 Bundlergem install bundler下載模板git clone https://github.com/murraco/jekyll-theme-minimal-resume.gitcd jekyll-theme-minimal-resume下載 Jekyll 與附屬檔案bundle install在本地執行網頁基本指令，網站將開在 127.0.0.1:4000bundle exec jekyll serve開在指定IPbundle exec jekyll serve --port 8080部落格資料夾用途|-- _config.yml|-- _posts/|-- _site/|-- 404.html|-- about.md|-- Gemfile|-- Gemfile.lock|_  index.md_config.yml   ➜   基本網頁配置 _posts   ➜   網頁文章 _site   ➜   404.html   ➜   錯誤頁面 about.md   ➜   關於頁面 index.md   ➜   主頁面 Gemfile   ➜   Ruby 代碼集合 Gemfile.lock   ➜   所有安裝的的版本資訊]]></content>
-      <categories>
-        
-          <category> Jekyll </category>
-        
-          <category> GitPages </category>
-        
-      </categories>
-      <tags>
-        
-      </tags>
-      <tags></tags>
-    </entry>
-  
-    <entry>
       <title><![CDATA[AWS 使用 Ubuntu Linux]]></title>
       <url>/aws/ubuntu/2019/10/17/aws-ubuntu/</url>
       <content type="text"><![CDATA[在AWS 開啟 UbuntuEC2 資訊：☑ AMI : Ubuntu Server 16.04 ☑ Instance Type : t2.medium下載 PuttyPutty 設定IPPuTTY Configuration ➜ Session ➜ Host Name將 AWS 資訊欄中 IPv4 Public IP 填入 Host Name.pem 至 .ppk開啟 PuTTYgen 點選 Load載入 Ubuntu 的 .pem 檔案成功匯入畫面點選 Save private key將匯出 .ppk 檔案Putty 載入 .ppkPuTTY Configuration ➜ Connection ➜ SSH ➜ Auth ➜ Authentication parameters點選 Browse… 載入 .ppk儲存並開啟 SessionPuTTY Configuration ➜ Session ➜ Saved Sessions ➜ Open終端機指令login as: ubuntusudo apt update &amp;&amp;  sudo apt upgradesudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_configsudo /etc/init.d/ssh restartsudo passwd ubuntu #enter passwordsudo apt install xrdp xfce4 xfce4-goodies tightvncserverecho xfce4-session&gt; /home/ubuntu/.xsessionsudo cp /home/ubuntu/.xsession /etc/skelsudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.inisudo service xrdp restartsudo rebootTunnels 設定PuTTY Configuration ➜ Connection ➜ SSH ➜ Tunnels☑ Source port 8888 ☑ Destination :3389➜ Add儲存並再次開啟 Session利用 netstat -antp 檢查 :3389 是否開啟開啟遠端桌面連線IP 127.0.0.1:8888 進入 Ubuntu 介面]]></content>
