@@ -506,37 +506,37 @@
 
 <h3 id="終端機指令">終端機指令</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>login as: ubuntu
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>login as: ubuntu
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt update &amp;&amp;  sudo apt upgrade
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt update &amp;&amp;  sudo apt upgrade
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo /etc/init.d/ssh restart
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo /etc/init.d/ssh restart
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo passwd ubuntu #enter password
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo passwd ubuntu #enter password
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>echo xfce4-session&gt; /home/ubuntu/.xsession
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>echo xfce4-session&gt; /home/ubuntu/.xsession
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo cp /home/ubuntu/.xsession /etc/skel
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo cp /home/ubuntu/.xsession /etc/skel
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo service xrdp restart
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo service xrdp restart
 </code></pre></td></tr></tbody></table></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo reboot
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>sudo reboot
 </code></pre></td></tr></tbody></table></div></div>
 
 <h3 id="tunnels-設定">Tunnels 設定</h3>
@@ -552,7 +552,7 @@
 
 <h3 id="儲存並再次開啟-session">儲存並再次開啟 Session</h3>
 
-<p>利用 <code class="highlighter-rouge">netstat -antp</code> 檢查 :3389 是否開啟</p>
+<p>利用 <code class="language-plaintext highlighter-rouge">netstat -antp</code> 檢查 :3389 是否開啟</p>
 
 <h3 id="開啟遠端桌面連線">開啟遠端桌面連線</h3>
 
@@ -598,6 +598,10 @@
       
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/jekyll/gitpages/2019/10/18/jekylltheme/" rel="next" title="Github Pages 使用 Jekyll 網頁模版">
+                <i class="fa fa-chevron-left"></i> Github Pages 使用 Jekyll 網頁模版
+              </a>
             
           </div>
 
@@ -688,7 +692,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -699,12 +703,21 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -773,7 +786,7 @@
   
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

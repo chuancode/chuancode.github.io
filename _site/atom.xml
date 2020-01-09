@@ -1,4 +1,146 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-17T17:28:44+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">AWS 使用 Ubuntu Linux</title><link href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="alternate" type="text/html" title="AWS 使用 Ubuntu Linux" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu</id><content type="html" xml:base="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">&lt;h2 id=&quot;在aws-開啟-ubuntu&quot;&gt;在AWS 開啟 Ubuntu&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-01-09T15:06:26+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">Jekyll serve 錯誤</title><link href="http://localhost:4000/jekyll/2020/01/09/jekyll-error/" rel="alternate" type="text/html" title="Jekyll serve 錯誤" /><published>2020-01-09T00:00:00+08:00</published><updated>2020-01-09T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/2020/01/09/jekyll-error</id><content type="html" xml:base="http://localhost:4000/jekyll/2020/01/09/jekyll-error/">&lt;h2 id=&quot;bundle-exec-jekyll-serve-error&quot;&gt;bundle exec jekyll serve ERROR!&lt;/h2&gt;
+
+&lt;p&gt;錯誤訊息:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':
+                  Invalid CP950 character &quot;\xE2&quot; on line 5
+jekyll 3.7.4 | Error:  Invalid CP950 character &quot;\xE2&quot; on line 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;debug&quot;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;在 assets/css 新增 style.scss, 內容為:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+---
+
+@charset &quot;UTF-8&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/2020/01/09/jekyll-error/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><category term="Jekyll" /><category term="Jekyll error" /><summary type="html">bundle exec jekyll serve ERROR!</summary></entry><entry><title type="html">MongoDB 本地資料庫移至 MongoDB Atlas</title><link href="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/" rel="alternate" type="text/html" title="MongoDB 本地資料庫移至 MongoDB Atlas" /><published>2019-10-20T00:00:00+08:00</published><updated>2019-10-20T00:00:00+08:00</updated><id>http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas</id><content type="html" xml:base="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">&lt;h2 id=&quot;新增使用者&quot;&gt;新增使用者&lt;/h2&gt;
+
+&lt;p&gt;使用 admin 資料庫，新增 root 權限使用者&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;use admin
+
+&amp;gt;db.createUser(
+      {
+          user: &quot;admin&quot;,
+          pwd: &quot;admin&quot;,
+          roles: [ &quot;root&quot; ]
+      }
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;資料庫處理&quot;&gt;資料庫處理&lt;/h2&gt;
+
+&lt;p&gt;選擇要匯出的資料庫&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongodump --host 127.0.0.1
+  --port 27017
+  -u &amp;lt;使用者名稱&amp;gt;
+  --authenticationDatabase admin
+  --db &amp;lt;匯出資料庫名稱&amp;gt;
+  -o &amp;lt;匯出路徑&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json&lt;/p&gt;
+
+&lt;h2 id=&quot;資料庫載入到-mongodb-altas&quot;&gt;資料庫載入到 MongoDB Altas&lt;/h2&gt;
+
+&lt;h3 id=&quot;在-mongodb-altas-創建-clusters&quot;&gt;在 MongoDB Altas 創建 Clusters&lt;/h3&gt;
+
+&lt;h3 id=&quot;資料庫匯入-clusters&quot;&gt;資料庫匯入 Clusters&lt;/h3&gt;
+
+&lt;p&gt;Clusters ➜ … ➜ Command Line Tools&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/altas-1.png&quot; alt=&quot;altas-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;複製 mongorestore 下的程式碼，更改為下 ↓&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongorestore
+  --host &amp;lt;host&amp;gt;
+  --ssl
+  --username &amp;lt;USERNAME&amp;gt;
+  --password &amp;lt;PASSWORD&amp;gt;
+  --authenticationDatabase admin
+  --db &amp;lt;資料庫名稱&amp;gt; C:\Users... &amp;lt;資料庫路徑&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;結果&quot;&gt;結果&lt;/h2&gt;
+
+&lt;p&gt;在 Sandbox 中點擊 Collections&lt;/p&gt;
+
+&lt;p&gt;在此頁面若是成功上傳資料庫則會顯示於此&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/post/altas-2.png&quot; alt=&quot;altas-2&quot; /&gt;&lt;/p&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/mongodb/2019/10/20/mongodbtoaltas/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><category term="mondodb" /><category term="mongodb atlas" /><summary type="html">新增使用者</summary></entry><entry><title type="html">Github Pages 使用 Jekyll 網頁模版</title><link href="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/" rel="alternate" type="text/html" title="Github Pages 使用 Jekyll 網頁模版" /><published>2019-10-18T00:00:00+08:00</published><updated>2019-10-18T00:00:00+08:00</updated><id>http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme</id><content type="html" xml:base="http://localhost:4000/jekyll/gitpages/2019/10/18/jekylltheme/">&lt;h2 id=&quot;在-jekyll-themes-選擇喜歡的模板&quot;&gt;在 &lt;a herf=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt; 選擇喜歡的模板&lt;/h2&gt;
+
+&lt;p&gt;以 &lt;a herf=&quot;http://jekyllthemes.org/themes/Minimal-Resume/&quot;&gt;Minimal Resume&lt;/a&gt; 為例&lt;/p&gt;
+
+&lt;h2 id=&quot;終端機指令&quot;&gt;終端機指令&lt;/h2&gt;
+
+&lt;h3 id=&quot;檢查是否安裝-ruby&quot;&gt;檢查是否安裝 Ruby&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-ruby&quot;&gt;下載 Ruby&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-bundler&quot;&gt;下載 Bundler&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載模板&quot;&gt;下載模板&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/murraco/jekyll-theme-minimal-resume.git
+cd jekyll-theme-minimal-resume
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;下載-jekyll-與附屬檔案&quot;&gt;下載 Jekyll 與附屬檔案&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;在本地執行網頁&quot;&gt;在本地執行網頁&lt;/h3&gt;
+
+&lt;p&gt;基本指令，網站將開在 127.0.0.1:4000&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;開在指定IP&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve --port 8080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;部落格資料夾用途&quot;&gt;部落格資料夾用途&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|-- _config.yml
+|-- _posts/
+|-- _site/
+|-- 404.html
+|-- about.md
+|-- Gemfile
+|-- Gemfile.lock
+|_  index.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;_config.yml   ➜   基本網頁配置 &lt;br /&gt;
+_posts   ➜   網頁文章 &lt;br /&gt;
+_site   ➜   &lt;br /&gt;
+404.html   ➜   錯誤頁面 &lt;br /&gt;
+about.md   ➜   關於頁面 &lt;br /&gt;
+index.md   ➜   主頁面 &lt;br /&gt;
+Gemfile   ➜   Ruby 代碼集合 &lt;br /&gt;
+Gemfile.lock   ➜   所有安裝的的版本資訊&lt;/p&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/gitpages/2019/10/18/jekylltheme/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">在 Jekyll Themes 選擇喜歡的模板</summary></entry><entry><title type="html">AWS 使用 Ubuntu Linux</title><link href="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/" rel="alternate" type="text/html" title="AWS 使用 Ubuntu Linux" /><published>2019-10-17T00:00:00+08:00</published><updated>2019-10-17T00:00:00+08:00</updated><id>http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu</id><content type="html" xml:base="http://localhost:4000/aws/ubuntu/2019/10/17/aws-ubuntu/">&lt;h2 id=&quot;在aws-開啟-ubuntu&quot;&gt;在AWS 開啟 Ubuntu&lt;/h2&gt;
 &lt;p&gt;EC2 資訊：&lt;br /&gt;
 ☑ AMI : Ubuntu Server 16.04 &lt;br /&gt;
 ☑ Instance Type : t2.medium&lt;/p&gt;
@@ -45,37 +187,37 @@
 
 &lt;h3 id=&quot;終端機指令&quot;&gt;終端機指令&lt;/h3&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;login as: ubuntu
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;login as: ubuntu
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp;  sudo apt upgrade
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt update &amp;amp;&amp;amp;  sudo apt upgrade
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo /etc/init.d/ssh restart
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo /etc/init.d/ssh restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo passwd ubuntu #enter password
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo passwd ubuntu #enter password
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt install xrdp xfce4 xfce4-goodies tightvncserver
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo xfce4-session&amp;gt; /home/ubuntu/.xsession
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo xfce4-session&amp;gt; /home/ubuntu/.xsession
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo cp /home/ubuntu/.xsession /etc/skel
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo cp /home/ubuntu/.xsession /etc/skel
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo sed -i '0,/-1/s//ask-1/' /etc/xrdp/xrdp.ini
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo service xrdp restart
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo service xrdp restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo reboot
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo reboot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;tunnels-設定&quot;&gt;Tunnels 設定&lt;/h3&gt;
@@ -91,7 +233,7 @@
 
 &lt;h3 id=&quot;儲存並再次開啟-session&quot;&gt;儲存並再次開啟 Session&lt;/h3&gt;
 
-&lt;p&gt;利用 &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat -antp&lt;/code&gt; 檢查 :3389 是否開啟&lt;/p&gt;
+&lt;p&gt;利用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netstat -antp&lt;/code&gt; 檢查 :3389 是否開啟&lt;/p&gt;
 
 &lt;h3 id=&quot;開啟遠端桌面連線&quot;&gt;開啟遠端桌面連線&lt;/h3&gt;
 
@@ -119,7 +261,7 @@
 
 &lt;script src=&quot;https://gist.github.com/chuan520/1206e7e85ead7698646dbc7db0462e71.js&quot;&gt;&lt;/script&gt;
 
-&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/16/ga-api02/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">Google Analytics Demo &amp;amp; Tools 利用此網站查詢相對應的維度與指標 ❢ 利用 Query Explor 可以直接使用維度與指標抓取資料 Python 使用 維度與指標 顯示七天前的數據 顯示一段期間的數據 使用自訂義維度</summary></entry><entry><title type="html">Google Analytics API 使用</title><link href="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/" rel="alternate" type="text/html" title="Google Analytics API 使用" /><published>2019-10-15T00:00:00+08:00</published><updated>2019-10-15T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01</id><content type="html" xml:base="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/">&lt;h2 id=&quot;開啟-google-analytics-api&quot;&gt;開啟 Google Analytics API&lt;/h2&gt;
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/16/ga-api02/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">Google Analytics Demo &amp;amp; Tools</summary></entry><entry><title type="html">Google Analytics API 使用</title><link href="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/" rel="alternate" type="text/html" title="Google Analytics API 使用" /><published>2019-10-15T00:00:00+08:00</published><updated>2019-10-15T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01</id><content type="html" xml:base="http://localhost:4000/google%20analytics/python/2019/10/15/ga-api01/">&lt;h2 id=&quot;開啟-google-analytics-api&quot;&gt;開啟 Google Analytics API&lt;/h2&gt;
 
 &lt;h3 id=&quot;至-google-developers-console--新建專案&quot;&gt;至&lt;a href=&quot;https://console.developers.google.com/project&quot;&gt; Google Developers Console &lt;/a&gt; 新建專案&lt;/h3&gt;
 
@@ -169,7 +311,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/post/gaapi-7.png&quot; alt=&quot;gaapi-7&quot; /&gt;&lt;/p&gt;
 
-&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/15/ga-api01/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">開啟 Google Analytics API 至 Google Developers Console 新建專案 在API和服務的資訊主頁中點選啟用API和服務 啟用API 搜尋 Analytics API ， 開啟 Google Analytics Reporting API 建立憑證 在 API和服務的憑證頁面中建立新的憑證 選取 OAuth 用戶端 ID 憑證 建立 OAuth 用戶端 ID 建立完成後下載 json檔案 API 測試 資料檢視ID Google Analytics 網頁 ➜ 管理 ➜ 資料檢視設定 ➜ 資料檢視ID 利用 Python 測試 更改： ☑ CLIENT_SECRETS_PATH = ‘ json檔案路徑 ‘ ☑ VIEW_ID = ‘ Google Analytics 資料檢視ID ‘ 結果</summary></entry><entry><title type="html">Google Tag Manager 抓取 Client Id</title><link href="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" rel="alternate" type="text/html" title="Google Tag Manager 抓取 Client Id" /><published>2019-10-08T00:00:00+08:00</published><updated>2019-10-08T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId</id><content type="html" xml:base="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">&lt;h2 id=&quot;client-id-是&quot;&gt;Client Id 是？&lt;/h2&gt;
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/15/ga-api01/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">開啟 Google Analytics API</summary></entry><entry><title type="html">Google Tag Manager 抓取 Client Id</title><link href="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" rel="alternate" type="text/html" title="Google Tag Manager 抓取 Client Id" /><published>2019-10-08T00:00:00+08:00</published><updated>2019-10-08T00:00:00+08:00</updated><id>http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId</id><content type="html" xml:base="http://localhost:4000/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">&lt;h2 id=&quot;client-id-是&quot;&gt;Client Id 是？&lt;/h2&gt;
 
 &lt;p&gt;當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)&lt;/p&gt;
 
@@ -206,4 +348,4 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/post/cid-5.png&quot; alt=&quot;cid-5&quot; /&gt;&lt;/p&gt;
 
-&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">Client Id 是？ 當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID) 如何利用 GTM 取得 Client Id 設置自定義維度 Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度 GTM設置新變數 ☑ 變數類型；自訂JavaScript 建立觸發條件 ☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded ) ☑ 這項觸發條件的啟動時機：部分的載入視窗事件 建立代碼 ( Tags ) 在 Google Analytics 查看 再次要維度中選擇自定義維度的名稱</summary></entry></feed>
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><summary type="html">Client Id 是？</summary></entry></feed>
