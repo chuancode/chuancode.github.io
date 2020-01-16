@@ -6,7 +6,7 @@ categories:
 tags:
  - Django
  - Mysql
- -Django with Mysql error
+ - Django with Mysql error
 ---
 
 ## ERROR 1!
@@ -58,4 +58,4 @@ python manage.py migrate
 
 ```
 
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/2020/01/09/jekyll-error/" frameborder="0" scrolling = "no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/2020/01/16/2020-01-16-django-sql/" frameborder="0" scrolling = "no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
