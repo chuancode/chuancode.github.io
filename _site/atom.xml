@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:8080/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8080/" rel="alternate" type="text/html" /><updated>2020-01-16T10:01:26+08:00</updated><id>http://localhost:8080/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">MongoDB 本地資料庫移至 MongoDB Atlas</title><link href="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/" rel="alternate" type="text/html" title="MongoDB 本地資料庫移至 MongoDB Atlas" /><published>2019-10-20T00:00:00+08:00</published><updated>2019-10-20T00:00:00+08:00</updated><id>http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas</id><content type="html" xml:base="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">&lt;h2 id=&quot;新增使用者&quot;&gt;新增使用者&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:8080/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:8080/" rel="alternate" type="text/html" /><updated>2020-01-16T10:02:21+08:00</updated><id>http://localhost:8080/atom.xml</id><title type="html">Chuan Code</title><subtitle>Hi</subtitle><author><name>chuan</name></author><entry><title type="html">Jekyll serve 錯誤</title><link href="http://localhost:8080/jekyll/2020/01/09/jekyll-error/" rel="alternate" type="text/html" title="Jekyll serve 錯誤" /><published>2020-01-09T00:00:00+08:00</published><updated>2020-01-09T00:00:00+08:00</updated><id>http://localhost:8080/jekyll/2020/01/09/jekyll-error</id><content type="html" xml:base="http://localhost:8080/jekyll/2020/01/09/jekyll-error/">&lt;h2 id=&quot;bundle-exec-jekyll-serve-error&quot;&gt;bundle exec jekyll serve ERROR!&lt;/h2&gt;
+
+&lt;p&gt;錯誤訊息:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':
+                  Invalid CP950 character &quot;\xE2&quot; on line 5
+jekyll 3.7.4 | Error:  Invalid CP950 character &quot;\xE2&quot; on line 5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;debug&quot;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;在 assets/css 新增 style.scss, 內容為:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+---
+
+@charset &quot;UTF-8&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;iframe data-v-b66e9a5a=&quot;&quot; src=&quot;https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/2020/01/09/jekyll-error/&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; class=&quot;lc-margin-top-64 lc-margin-bottom-32 lc-mobile&quot;&gt;&lt;/iframe&gt;</content><author><name>chuan</name></author><category term="Jekyll" /><category term="Jekyll error" /><summary type="html">bundle exec jekyll serve ERROR!</summary></entry><entry><title type="html">MongoDB 本地資料庫移至 MongoDB Atlas</title><link href="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/" rel="alternate" type="text/html" title="MongoDB 本地資料庫移至 MongoDB Atlas" /><published>2019-10-20T00:00:00+08:00</published><updated>2019-10-20T00:00:00+08:00</updated><id>http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas</id><content type="html" xml:base="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">&lt;h2 id=&quot;新增使用者&quot;&gt;新增使用者&lt;/h2&gt;
 
 &lt;p&gt;使用 admin 資料庫，新增 root 權限使用者&lt;/p&gt;
 

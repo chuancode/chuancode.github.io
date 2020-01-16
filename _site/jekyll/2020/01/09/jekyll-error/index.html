@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="" />
+  <meta name="keywords" content="Jekyll,Jekyll error," />
 
 
 
@@ -109,25 +109,17 @@
 
 
 
-<meta name="description" content="利用 Google Analytics API 抓取資料">
-<meta name="keywords" content="Jekyll, NexT">
+<meta name="description" content="Jekyll serve Error Invalid CP950 character">
+<meta name="keywords" content="Jekyll, Jekyll error">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Analytics API 使用">
-<meta property="og:url" content="http://localhost:8080/google%20analytics/python/2019/10/15/ga-api01/">
+<meta property="og:title" content="Jekyll serve 錯誤">
+<meta property="og:url" content="http://localhost:4000/jekyll/2020/01/09/jekyll-error/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="利用 Google Analytics API 抓取資料">
+<meta property="og:description" content="Jekyll serve Error Invalid CP950 character">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/gaapi-1.png">
-<meta property="og:image" content="/assets/images/post/gaapi-2.png">
-<meta property="og:image" content="/assets/images/post/gaapi-3.png">
-<meta property="og:image" content="/assets/images/post/gaapi-4.png">
-<meta property="og:image" content="/assets/images/post/gaapi-5.png">
-<meta property="og:image" content="/assets/images/post/gaapi-6.png">
-<meta property="og:image" content="/assets/images/post/gaapi-7.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Analytics API 使用">
-<meta name="twitter:description" content="利用 Google Analytics API 抓取資料">
-<meta name="twitter:image" content="/assets/images/post/gaapi-1.png">
+<meta name="twitter:title" content="Jekyll serve 錯誤">
+<meta name="twitter:description" content="Jekyll serve Error Invalid CP950 character">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://localhost:8080/"/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
 
 
-  <title>Google Analytics API 使用 | Chuan Code</title>
+  <title>Jekyll serve 錯誤 | Chuan Code</title>
   
 
 
@@ -336,7 +328,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:8080/google%20analytics/python/2019/10/15/ga-api01/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/jekyll/2020/01/09/jekyll-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -356,7 +348,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Google Analytics API 使用
+            Jekyll serve 錯誤
           
         </h1>
         
@@ -370,8 +362,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-15T00:00:00+08:00">
-                2019-10-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-09T00:00:00+08:00">
+                2020-01-09
               </time>
             
 
@@ -394,20 +386,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Analytics" itemprop="url" rel="index">
-                    <span itemprop="name">Google Analytics</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Python" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/category/#/Jekyll" itemprop="url" rel="index">
+                    <span itemprop="name">Jekyll</span>
                   </a>
                 </span>
 
@@ -431,7 +411,7 @@
           
             
                 <div class="post-description">
-                    利用 Google Analytics API 抓取資料
+                    Jekyll serve Error Invalid CP950 character
                 </div>
             
           
@@ -461,57 +441,26 @@
 
 
 
-  <h2 id="開啟-google-analytics-api">開啟 Google Analytics API</h2>
+  <h2 id="bundle-exec-jekyll-serve-error">bundle exec jekyll serve ERROR!</h2>
 
-<h3 id="至-google-developers-console--新建專案">至<a href="https://console.developers.google.com/project"> Google Developers Console </a> 新建專案</h3>
+<p>錯誤訊息:</p>
 
-<h3 id="在api和服務的資訊主頁中點選啟用api和服務">在API和服務的資訊主頁中點選啟用API和服務</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':
+                  Invalid CP950 character "\xE2" on line 5
+jekyll 3.7.4 | Error:  Invalid CP950 character "\xE2" on line 5
+</code></pre></td></tr></tbody></table></div></div>
 
-<p><img src="/assets/images/post/gaapi-1.png" alt="gaapi-1" /></p>
+<h2 id="debug">Debug</h2>
 
-<h3 id="啟用api">啟用API</h3>
+<p>在 assets/css 新增 style.scss, 內容為:</p>
 
-<p>搜尋 Analytics API ， 開啟 Google Analytics Reporting API</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>---
+---
 
-<p><img src="/assets/images/post/gaapi-2.png" alt="gaapi-2" /></p>
+@charset "UTF-8";
+</code></pre></td></tr></tbody></table></div></div>
 
-<h2 id="建立憑證">建立憑證</h2>
-
-<p>在 API和服務的憑證頁面中建立新的憑證</p>
-
-<h3 id="選取-oauth-用戶端-id-憑證">選取 OAuth 用戶端 ID 憑證</h3>
-
-<p><img src="/assets/images/post/gaapi-3.png" alt="gaapi-3" /></p>
-
-<h3 id="建立-oauth-用戶端-id">建立 OAuth 用戶端 ID</h3>
-
-<p><img src="/assets/images/post/gaapi-4.png" alt="gaapi-4" /></p>
-
-<h3 id="建立完成後下載-json檔案">建立完成後下載 json檔案</h3>
-
-<p><img src="/assets/images/post/gaapi-5.png" alt="gaapi-5" /></p>
-
-<h2 id="api-測試">API 測試</h2>
-
-<h3 id="資料檢視id">資料檢視ID</h3>
-
-<p>Google Analytics 網頁 ➜ 管理 ➜ 資料檢視設定 ➜ 資料檢視ID</p>
-
-<p><img src="/assets/images/post/gaapi-6.png" alt="gaapi-6" /></p>
-
-<h3 id="利用-python-測試">利用 Python 測試</h3>
-
-<p>更改：<br />
-☑ CLIENT_SECRETS_PATH =  ‘ json檔案路徑 ‘ <br />
-☑ VIEW_ID = ‘ Google Analytics 資料檢視ID ‘</p>
-
-<script src="https://gist.github.com/chuan520/a33d09d37fc144b2254317e8bcc8d5fd.js"></script>
-
-<h3 id="結果">結果</h3>
-
-<p><img src="/assets/images/post/gaapi-7.png" alt="gaapi-7" /></p>
-
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/python/2019/10/15/ga-api01/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/jekyll/2020/01/09/jekyll-error/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -540,6 +489,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Jekyll" rel="tag"># Jekyll</a>
+          
+            
+            <a href="/tag/#/Jekyll%20error" rel="tag"># Jekyll error</a>
+          
+        </div>
+      
 
       
       
@@ -552,18 +511,14 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/16/ga-api02/" rel="next" title="Google Analytics API 維度與指標的使用">
-                <i class="fa fa-chevron-left"></i> Google Analytics API 維度與指標的使用
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" rel="prev" title="Google Tag Manager 抓取 Client Id">
-                Google Tag Manager 抓取 Client Id <i class="fa fa-chevron-right"></i>
+              <a href="/mongodb/2019/10/20/mongodbtoaltas/" rel="prev" title="MongoDB 本地資料庫移至 MongoDB Atlas">
+                MongoDB 本地資料庫移至 MongoDB Atlas <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +669,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#開啟-google-analytics-api"> <span class="nav-number">1</span> <span class="nav-text">開啟 Google Analytics API</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#至-google-developers-console--新建專案"> <span class="nav-number">1.1</span> <span class="nav-text">至 Google Developers Console 新建專案</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#在api和服務的資訊主頁中點選啟用api和服務"> <span class="nav-number">1.2</span> <span class="nav-text">在API和服務的資訊主頁中點選啟用API和服務</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#啟用api"> <span class="nav-number">1.3</span> <span class="nav-text">啟用API</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#建立憑證"> <span class="nav-number">2</span> <span class="nav-text">建立憑證</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#選取-oauth-用戶端-id-憑證"> <span class="nav-number">2.1</span> <span class="nav-text">選取 OAuth 用戶端 ID 憑證</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立-oauth-用戶端-id"> <span class="nav-number">2.2</span> <span class="nav-text">建立 OAuth 用戶端 ID</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立完成後下載-json檔案"> <span class="nav-number">2.3</span> <span class="nav-text">建立完成後下載 json檔案</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#api-測試"> <span class="nav-number">3</span> <span class="nav-text">API 測試</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#資料檢視id"> <span class="nav-number">3.1</span> <span class="nav-text">資料檢視ID</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#利用-python-測試"> <span class="nav-number">3.2</span> <span class="nav-text">利用 Python 測試</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#結果"> <span class="nav-number">3.3</span> <span class="nav-text">結果</span> </a> </li> </ol> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#bundle-exec-jekyll-serve-error"> <span class="nav-number">1</span> <span class="nav-text">bundle exec jekyll serve ERROR!</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#debug"> <span class="nav-number">2</span> <span class="nav-text">Debug</span> </a> </li>
     </ol>
   </div>
             

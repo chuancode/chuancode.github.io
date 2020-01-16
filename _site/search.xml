@@ -2,6 +2,25 @@
 <search>
   
     <entry>
+      <title><![CDATA[Jekyll serve 錯誤]]></title>
+      <url>/jekyll/2020/01/09/jekyll-error/</url>
+      <content type="text"><![CDATA[bundle exec jekyll serve ERROR!錯誤訊息:Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':                  Invalid CP950 character "\xE2" on line 5jekyll 3.7.4 | Error:  Invalid CP950 character "\xE2" on line 5Debug在 assets/css 新增 style.scss, 內容為:------@charset "UTF-8";]]></content>
+      <categories>
+        
+          <category> Jekyll </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> Jekyll </tag>
+        
+          <tag> Jekyll error </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[MongoDB 本地資料庫移至 MongoDB Atlas]]></title>
       <url>/mongodb/2019/10/20/mongodbtoaltas/</url>
       <content type="text"><![CDATA[新增使用者使用 admin 資料庫，新增 root 權限使用者&gt;use admin&gt;db.createUser(      {          user: "admin",          pwd: "admin",          roles: [ "root" ]      }  )資料庫處理選擇要匯出的資料庫mongodump --host 127.0.0.1  --port 27017  -u &lt;使用者名稱&gt;  --authenticationDatabase admin  --db &lt;匯出資料庫名稱&gt;  -o &lt;匯出路徑&gt;成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json資料庫載入到 MongoDB Altas在 MongoDB Altas 創建 Clusters資料庫匯入 ClustersClusters ➜ … ➜ Command Line Tools複製 mongorestore 下的程式碼，更改為下 ↓mongorestore  --host &lt;host&gt;  --ssl  --username &lt;USERNAME&gt;  --password &lt;PASSWORD&gt;  --authenticationDatabase admin  --db &lt;資料庫名稱&gt; C:\Users... &lt;資料庫路徑&gt;結果在 Sandbox 中點擊 Collections在此頁面若是成功上傳資料庫則會顯示於此]]></content>
