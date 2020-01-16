@@ -2,6 +2,19 @@
 <search>
   
     <entry>
+      <title><![CDATA[]]></title>
+      <url>/2020/01/16/2020-01-16-django-sql/</url>
+      <content type="text"><![CDATA[ERROR 1!錯誤訊息:Authentication plugin 'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found解決方式:在 Mysql 環境中更改身份驗證方式ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密碼';ERROR 2!錯誤訊息:django.db.utils.OperationalError: (1049, "Unknown database 'mydatabase'")解決方式:在 Django 同步資料庫時要先手動建立資料庫在 Mysql 環境中建立資料庫並制定編碼create database mydatabase character set utf8;]]></content>
+      <categories>
+        
+      </categories>
+      <tags>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[Jekyll serve 錯誤]]></title>
       <url>/jekyll/2020/01/09/jekyll-error/</url>
       <content type="text"><![CDATA[bundle exec jekyll serve ERROR!錯誤訊息:Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss':                  Invalid CP950 character "\xE2" on line 5jekyll 3.7.4 | Error:  Invalid CP950 character "\xE2" on line 5Debug在 assets/css 新增 style.scss, 內容為:------@charset "UTF-8";]]></content>
