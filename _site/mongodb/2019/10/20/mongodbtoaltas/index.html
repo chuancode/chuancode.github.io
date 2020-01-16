@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="" />
+  <meta name="keywords" content="mondodb,mongodb atlas," />
 
 
 
@@ -109,23 +109,20 @@
 
 
 
-<meta name="description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
-<meta name="keywords" content="Jekyll, NexT">
+<meta name="description" content="將本地的 MongoDB 轉移至 雲端">
+<meta name="keywords" content="mondodb, mongodb atlas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Tag Manager 抓取 Client Id">
-<meta property="og:url" content="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+<meta property="og:title" content="MongoDB 本地資料庫移至 MongoDB Atlas">
+<meta property="og:url" content="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
+<meta property="og:description" content="將本地的 MongoDB 轉移至 雲端">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/cid-1.png">
-<meta property="og:image" content="/assets/images/post/cid-2.png">
-<meta property="og:image" content="/assets/images/post/cid-3.png">
-<meta property="og:image" content="/assets/images/post/cid-4.png">
-<meta property="og:image" content="/assets/images/post/cid-5.png">
+<meta property="og:image" content="/assets/images/post/altas-1.png">
+<meta property="og:image" content="/assets/images/post/altas-2.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Tag Manager 抓取 Client Id">
-<meta name="twitter:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
-<meta name="twitter:image" content="/assets/images/post/cid-1.png">
+<meta name="twitter:title" content="MongoDB 本地資料庫移至 MongoDB Atlas">
+<meta name="twitter:description" content="將本地的 MongoDB 轉移至 雲端">
+<meta name="twitter:image" content="/assets/images/post/altas-1.png">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -158,7 +155,7 @@
 
 
 
-  <title>Google Tag Manager 抓取 Client Id | Chuan Code</title>
+  <title>MongoDB 本地資料庫移至 MongoDB Atlas | Chuan Code</title>
   
 
 
@@ -334,7 +331,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -354,7 +351,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Google Tag Manager 抓取 Client Id
+            MongoDB 本地資料庫移至 MongoDB Atlas
           
         </h1>
         
@@ -368,8 +365,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">
-                2019-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-20T00:00:00+08:00">
+                2019-10-20
               </time>
             
 
@@ -392,20 +389,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Analytics" itemprop="url" rel="index">
-                    <span itemprop="name">Google Analytics</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Tag%20Manager" itemprop="url" rel="index">
-                    <span itemprop="name">Google Tag Manager</span>
+                  <a href="/category/#/MongoDB" itemprop="url" rel="index">
+                    <span itemprop="name">MongoDB</span>
                   </a>
                 </span>
 
@@ -429,7 +414,7 @@
           
             
                 <div class="post-description">
-                    利用 Tag Manager 追蹤 Google Analytics Client Id
+                    將本地的 MongoDB 轉移至 雲端
                 </div>
             
           
@@ -459,44 +444,65 @@
 
 
 
-  <h2 id="client-id-是">Client Id 是？</h2>
+  <h2 id="新增使用者">新增使用者</h2>
 
-<p>當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)</p>
+<p>使用 admin 資料庫，新增 root 權限使用者</p>
 
-<h2 id="如何利用-gtm-取得-client-id">如何利用 GTM 取得 Client Id</h2>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>&gt;use admin
 
-<h3 id="設置自定義維度">設置自定義維度</h3>
+&gt;db.createUser(
+      {
+          user: "admin",
+          pwd: "admin",
+          roles: [ "root" ]
+      }
+  )
+</code></pre></td></tr></tbody></table></div></div>
 
-<p>Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度</p>
+<h2 id="資料庫處理">資料庫處理</h2>
 
-<p><img src="/assets/images/post/cid-1.png" alt="cid-1" /></p>
+<p>選擇要匯出的資料庫</p>
 
-<h3 id="gtm設置新變數">GTM設置新變數</h3>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>mongodump --host 127.0.0.1
+  --port 27017
+  -u &lt;使用者名稱&gt;
+  --authenticationDatabase admin
+  --db &lt;匯出資料庫名稱&gt;
+  -o &lt;匯出路徑&gt;
+</code></pre></td></tr></tbody></table></div></div>
 
-<p>☑ 變數類型；自訂JavaScript</p>
+<p>成功後會出現以資料庫為名稱的資料夾，其中包含兩個檔案 .bson 與 .json</p>
 
-<script src="https://gist.github.com/chuan520/ed0a4b7784969ec26626d6d0c632f62f.js"></script>
+<h2 id="資料庫載入到-mongodb-altas">資料庫載入到 MongoDB Altas</h2>
 
-<p><img src="/assets/images/post/cid-2.png" alt="cid-2" /></p>
+<h3 id="在-mongodb-altas-創建-clusters">在 MongoDB Altas 創建 Clusters</h3>
 
-<h3 id="建立觸發條件">建立觸發條件</h3>
+<h3 id="資料庫匯入-clusters">資料庫匯入 Clusters</h3>
 
-<p>☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )
-☑ 這項觸發條件的啟動時機：部分的載入視窗事件</p>
+<p>Clusters ➜ … ➜ Command Line Tools</p>
 
-<p><img src="/assets/images/post/cid-3.png" alt="cid-3" /></p>
+<p><img src="/assets/images/post/altas-1.png" alt="altas-1" /></p>
 
-<h3 id="建立代碼--tags-">建立代碼 ( Tags )</h3>
+<p>複製 mongorestore 下的程式碼，更改為下 ↓</p>
 
-<p><img src="/assets/images/post/cid-4.png" alt="cid-4" /></p>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>mongorestore
+  --host &lt;host&gt;
+  --ssl
+  --username &lt;USERNAME&gt;
+  --password &lt;PASSWORD&gt;
+  --authenticationDatabase admin
+  --db &lt;資料庫名稱&gt; C:\Users... &lt;資料庫路徑&gt;
+</code></pre></td></tr></tbody></table></div></div>
 
-<h2 id="在-google-analytics-查看">在 Google Analytics 查看</h2>
+<h2 id="結果">結果</h2>
 
-<p>再次要維度中選擇自定義維度的名稱</p>
+<p>在 Sandbox 中點擊 Collections</p>
 
-<p><img src="/assets/images/post/cid-5.png" alt="cid-5" /></p>
+<p>在此頁面若是成功上傳資料庫則會顯示於此</p>
 
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<p><img src="/assets/images/post/altas-2.png" alt="altas-2" /></p>
+
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/mongodb/2019/10/20/mongodbtoaltas/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -525,6 +531,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/mondodb" rel="tag"># mondodb</a>
+          
+            
+            <a href="/tag/#/mongodb%20atlas" rel="tag"># mongodb atlas</a>
+          
+        </div>
+      
 
       
       
@@ -537,15 +553,15 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/15/ga-api01/" rel="next" title="Google Analytics API 使用">
-                <i class="fa fa-chevron-left"></i> Google Analytics API 使用
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/jekyll/gitpages/2019/10/18/jekylltheme/" rel="prev" title="Github Pages 使用 Jekyll 網頁模版">
+                Github Pages 使用 Jekyll 網頁模版 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -695,7 +711,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#client-id-是"> <span class="nav-number">1</span> <span class="nav-text">Client Id 是？</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#如何利用-gtm-取得-client-id"> <span class="nav-number">2</span> <span class="nav-text">如何利用 GTM 取得 Client Id</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#設置自定義維度"> <span class="nav-number">2.1</span> <span class="nav-text">設置自定義維度</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#gtm設置新變數"> <span class="nav-number">2.2</span> <span class="nav-text">GTM設置新變數</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立觸發條件"> <span class="nav-number">2.3</span> <span class="nav-text">建立觸發條件</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立代碼--tags-"> <span class="nav-number">2.4</span> <span class="nav-text">建立代碼 ( Tags )</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-google-analytics-查看"> <span class="nav-number">3</span> <span class="nav-text">在 Google Analytics 查看</span> </a> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#新增使用者"> <span class="nav-number">1</span> <span class="nav-text">新增使用者</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#資料庫處理"> <span class="nav-number">2</span> <span class="nav-text">資料庫處理</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#資料庫載入到-mongodb-altas"> <span class="nav-number">3</span> <span class="nav-text">資料庫載入到 MongoDB Altas</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#在-mongodb-altas-創建-clusters"> <span class="nav-number">3.1</span> <span class="nav-text">在 MongoDB Altas 創建 Clusters</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#資料庫匯入-clusters"> <span class="nav-number">3.2</span> <span class="nav-text">資料庫匯入 Clusters</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#結果"> <span class="nav-number">4</span> <span class="nav-text">結果</span> </a> </li>
     </ol>
   </div>
             
