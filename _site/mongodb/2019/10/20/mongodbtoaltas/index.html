@@ -113,7 +113,7 @@
 <meta name="keywords" content="mondodb, mongodb atlas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB 本地資料庫移至 MongoDB Atlas">
-<meta property="og:url" content="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">
+<meta property="og:url" content="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">
 <meta property="og:site_name" content="Chuan Code">
 <meta property="og:description" content="將本地的 MongoDB 轉移至 雲端">
 <meta property="og:locale" content="en">
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://localhost:8080/"/>
+  <link rel="canonical" href="http://localhost:4000/"/>
 
 
 
@@ -331,7 +331,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:8080/mongodb/2019/10/20/mongodbtoaltas/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/mongodb/2019/10/20/mongodbtoaltas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -448,7 +448,7 @@
 
 <p>使用 admin 資料庫，新增 root 權限使用者</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>&gt;use admin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code>&gt;use admin
 
 &gt;db.createUser(
       {
@@ -463,7 +463,7 @@
 
 <p>選擇要匯出的資料庫</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>mongodump --host 127.0.0.1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code>mongodump --host 127.0.0.1
   --port 27017
   -u &lt;使用者名稱&gt;
   --authenticationDatabase admin
@@ -485,7 +485,7 @@
 
 <p>複製 mongorestore 下的程式碼，更改為下 ↓</p>
 
-<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>mongorestore
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>mongorestore
   --host &lt;host&gt;
   --ssl
   --username &lt;USERNAME&gt;
@@ -657,7 +657,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -668,7 +668,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

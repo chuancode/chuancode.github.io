@@ -2,13 +2,21 @@
 <search>
   
     <entry>
-      <title><![CDATA[]]></title>
-      <url>/2020/01/16/2020-01-16-django-sql/</url>
-      <content type="text"><![CDATA[ERROR 1!錯誤訊息:Authentication plugin 'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found解決方式:在 Mysql 環境中更改身份驗證方式ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密碼';ERROR 2!錯誤訊息:django.db.utils.OperationalError: (1049, "Unknown database 'mydatabase'")解決方式:在 Django 同步資料庫時要先手動建立資料庫在 Mysql 環境中建立資料庫並制定編碼create database mydatabase character set utf8;]]></content>
+      <title><![CDATA[Django 使用 MySQL 遇到的錯誤]]></title>
+      <url>/django/2020/01/16/django-sql/</url>
+      <content type="text"><![CDATA[ERROR 1!錯誤訊息:Authentication plugin 'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found解決方式:在 Mysql 環境中更改身份驗證方式ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密碼';ERROR 2!錯誤訊息:django.db.utils.OperationalError: (1049, "Unknown database 'mydatabase'")解決方式:在 Django 同步資料庫時要先手動建立資料庫在 Mysql 環境中建立資料庫並制定編碼create database mydatabase character set utf8;ERROR 3!錯誤訊息:建立超級用戶(createsuperuser)時出錯django.db.utils.ProgrammingError: (1146, “Table ‘auth_user’ doesn’t exist”)解決方式:進行遷移(migrate)來創建auth_user表python manage.py makemigrationspython manage.py migrate]]></content>
       <categories>
+        
+          <category> Django </category>
         
       </categories>
       <tags>
+        
+          <tag> Django </tag>
+        
+          <tag> Mysql </tag>
+        
+          <tag> Django with Mysql error </tag>
         
       </tags>
       <tags></tags>
