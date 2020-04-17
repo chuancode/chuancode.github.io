@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="" />
+  <meta name="keywords" content="AWS RDS,MySQL,MySQL Workbench," />
 
 
 
@@ -109,23 +109,27 @@
 
 
 
-<meta name="description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
-<meta name="keywords" content="Jekyll, NexT">
+<meta name="description" content="使用 AWS RDS 開啟 MySQL 並連接 MySQL Workbench">
+<meta name="keywords" content="AWS RDS, MySQL, MySQL Workbench">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Tag Manager 抓取 Client Id">
-<meta property="og:url" content="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+<meta property="og:title" content="AWS RDS(MySQL) &amp; MySQL Workbench">
+<meta property="og:url" content="http://localhost:8080/aws/2020/04/14/aws-mysql-workbench/">
 <meta property="og:site_name" content="Chuan Code">
-<meta property="og:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
+<meta property="og:description" content="使用 AWS RDS 開啟 MySQL 並連接 MySQL Workbench">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="/assets/images/post/cid-1.png">
-<meta property="og:image" content="/assets/images/post/cid-2.png">
-<meta property="og:image" content="/assets/images/post/cid-3.png">
-<meta property="og:image" content="/assets/images/post/cid-4.png">
-<meta property="og:image" content="/assets/images/post/cid-5.png">
+<meta property="og:image" content="/assets/images/post/awsrds-1.png">
+<meta property="og:image" content="/assets/images/post/awsrds-2.png">
+<meta property="og:image" content="/assets/images/post/awsrds-3.png">
+<meta property="og:image" content="/assets/images/post/awsrds-4.png">
+<meta property="og:image" content="/assets/images/post/awsrds-5.png">
+<meta property="og:image" content="/assets/images/post/awsrds-6.png">
+<meta property="og:image" content="/assets/images/post/awsrds-8.png">
+<meta property="og:image" content="/assets/images/post/awsrds-7.png">
+<meta property="og:image" content="/assets/images/post/awsrds-9.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google Tag Manager 抓取 Client Id">
-<meta name="twitter:description" content="利用 Tag Manager 追蹤 Google Analytics Client Id">
-<meta name="twitter:image" content="/assets/images/post/cid-1.png">
+<meta name="twitter:title" content="AWS RDS(MySQL) &amp; MySQL Workbench">
+<meta name="twitter:description" content="使用 AWS RDS 開啟 MySQL 並連接 MySQL Workbench">
+<meta name="twitter:image" content="/assets/images/post/awsrds-1.png">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -158,7 +162,7 @@
 
 
 
-  <title>Google Tag Manager 抓取 Client Id | Chuan Code</title>
+  <title>AWS RDS(MySQL) & MySQL Workbench | Chuan Code</title>
   
 
 
@@ -334,7 +338,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:8080/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:8080/aws/2020/04/14/aws-mysql-workbench/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chuan">
@@ -354,7 +358,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Google Tag Manager 抓取 Client Id
+            AWS RDS(MySQL) & MySQL Workbench
           
         </h1>
         
@@ -368,8 +372,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-08T00:00:00+08:00">
-                2019-10-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-14T00:00:00+08:00">
+                2020-04-14
               </time>
             
 
@@ -392,20 +396,8 @@
               
                 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Analytics" itemprop="url" rel="index">
-                    <span itemprop="name">Google Analytics</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Google%20Tag%20Manager" itemprop="url" rel="index">
-                    <span itemprop="name">Google Tag Manager</span>
+                  <a href="/category/#/AWS" itemprop="url" rel="index">
+                    <span itemprop="name">AWS</span>
                   </a>
                 </span>
 
@@ -429,7 +421,7 @@
           
             
                 <div class="post-description">
-                    利用 Tag Manager 追蹤 Google Analytics Client Id
+                    使用 AWS RDS 開啟 MySQL 並連接 MySQL Workbench
                 </div>
             
           
@@ -459,44 +451,66 @@
 
 
 
-  <h2 id="client-id-是">Client Id 是？</h2>
+  <h2 id="在-aws-rds-中建立-mysql">在 AWS RDS 中建立 MySQL</h2>
 
-<p>當進入有使用GA的網站時,GA會發送一組Cookie到瀏覽器中來追蹤訪客的行為,這組Cookie就是GA中的Client Id(CID)</p>
+<h3 id="資料庫配置">資料庫配置</h3>
 
-<h2 id="如何利用-gtm-取得-client-id">如何利用 GTM 取得 Client Id</h2>
+<p><img src="/assets/images/post/awsrds-1.png" alt="awsrds-1-1" /></p>
 
-<h3 id="設置自定義維度">設置自定義維度</h3>
+<p>☑ 命名資料庫 (DB instance identifier)
+☑ 設定主用戶名稱 (Master username)
+☑ 設定主用戶密碼 (Master password)</p>
 
-<p>Google Analytics ➜ 管理 ➜ 自訂定義 ➜ 自定維度 ➜ 新增自定維度</p>
+<p><img src="/assets/images/post/awsrds-2.png" alt="awsrds-2" /></p>
 
-<p><img src="/assets/images/post/cid-1.png" alt="cid-1" /></p>
+<p>☑ 選擇免費模板 (Free tier) 時, Availability &amp; durability 無法做更改</p>
 
-<h3 id="gtm設置新變數">GTM設置新變數</h3>
+<p><img src="/assets/images/post/awsrds-3.png" alt="awsrds-3" /></p>
 
-<p>☑ 變數類型；自訂JavaScript</p>
+<p>☑ 建立VPC
+☑ 若是要讓外部連接 Public accesible 選 Yes</p>
 
-<script src="https://gist.github.com/chuan520/ed0a4b7784969ec26626d6d0c632f62f.js"></script>
+<p><img src="/assets/images/post/awsrds-4.png" alt="awsrds-4" /></p>
 
-<p><img src="/assets/images/post/cid-2.png" alt="cid-2" /></p>
+<p>☑ 設定資料庫認證方式</p>
 
-<h3 id="建立觸發條件">建立觸發條件</h3>
+<p><img src="/assets/images/post/awsrds-5.png" alt="awsrds-5" /></p>
 
-<p>☑ 觸發條件類型： 網頁瀏覽 - 視窗已載入 ( Page View - Window Loaded )
-☑ 這項觸發條件的啟動時機：部分的載入視窗事件</p>
+<p>☑ 設定初始資料庫名稱(不設定亦可,可之後更改)</p>
 
-<p><img src="/assets/images/post/cid-3.png" alt="cid-3" /></p>
+<p><img src="/assets/images/post/awsrds-6.png" alt="awsrds-6" /></p>
 
-<h3 id="建立代碼--tags-">建立代碼 ( Tags )</h3>
+<h2 id="連接-mysql-workbench">連接 MySQL Workbench</h2>
 
-<p><img src="/assets/images/post/cid-4.png" alt="cid-4" /></p>
+<h3 id="連接設定">連接設定</h3>
 
-<h2 id="在-google-analytics-查看">在 Google Analytics 查看</h2>
+<p>MySQL Workbench ➜ Database ➜ Connect to Database</p>
 
-<p>再次要維度中選擇自定義維度的名稱</p>
+<p>☑ Hostname : RDS Endpoint
+☑ Port</p>
 
-<p><img src="/assets/images/post/cid-5.png" alt="cid-5" /></p>
+<p><img src="/assets/images/post/awsrds-8.png" alt="awsrds-8" /></p>
 
-<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/google%20analytics/google%20tag%20manager/2019/10/08/gtm-track-clientId/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
+<p>☑ Username : master username
+☑ Password : master password (選案 “Store in Vault …” 來輸入密碼)</p>
+
+<p><img src="/assets/images/post/awsrds-7.png" alt="awsrds-7" /></p>
+
+<h3 id="錯誤解決方案">錯誤解決方案</h3>
+
+<p>錯誤訊息:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code> error "Cannot Connect to Database Server" error (10060).
+</code></pre></td></tr></tbody></table></div></div>
+
+<p>解決方式:
+1) 在 RDS 的 Security Group 建立相對應的輸入規則</p>
+
+<p><img src="/assets/images/post/awsrds-9.png" alt="awsrds-9" /></p>
+
+<p>2) 或者也有可能是網路的問題,可嘗試使用不同的網路</p>
+
+<iframe data-v-b66e9a5a="" src="https://button.like.co/in/embed/a0976663511/button?referrer=https://chuancode.github.io/aws/2020/04/14/aws-mysql-workbench/" frameborder="0" scrolling="no" class="lc-margin-top-64 lc-margin-bottom-32 lc-mobile"></iframe>
 
 
       
@@ -525,6 +539,19 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/AWS%20RDS" rel="tag"># AWS RDS</a>
+          
+            
+            <a href="/tag/#/MySQL" rel="tag"># MySQL</a>
+          
+            
+            <a href="/tag/#/MySQL%20Workbench" rel="tag"># MySQL Workbench</a>
+          
+        </div>
+      
 
       
       
@@ -537,15 +564,15 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/google%20analytics/python/2019/10/15/ga-api01/" rel="next" title="Google Analytics API 使用">
-                <i class="fa fa-chevron-left"></i> Google Analytics API 使用
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/django/2020/01/16/django-sql/" rel="prev" title="Django 使用 MySQL 遇到的錯誤">
+                Django 使用 MySQL 遇到的錯誤 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -695,7 +722,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-2"> <a class="nav-link" href="#client-id-是"> <span class="nav-number">1</span> <span class="nav-text">Client Id 是？</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#如何利用-gtm-取得-client-id"> <span class="nav-number">2</span> <span class="nav-text">如何利用 GTM 取得 Client Id</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#設置自定義維度"> <span class="nav-number">2.1</span> <span class="nav-text">設置自定義維度</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#gtm設置新變數"> <span class="nav-number">2.2</span> <span class="nav-text">GTM設置新變數</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立觸發條件"> <span class="nav-number">2.3</span> <span class="nav-text">建立觸發條件</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#建立代碼--tags-"> <span class="nav-number">2.4</span> <span class="nav-text">建立代碼 ( Tags )</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-google-analytics-查看"> <span class="nav-number">3</span> <span class="nav-text">在 Google Analytics 查看</span> </a> </li>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#在-aws-rds-中建立-mysql"> <span class="nav-number">1</span> <span class="nav-text">在 AWS RDS 中建立 MySQL</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#資料庫配置"> <span class="nav-number">1.1</span> <span class="nav-text">資料庫配置</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#連接-mysql-workbench"> <span class="nav-number">2</span> <span class="nav-text">連接 MySQL Workbench</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#連接設定"> <span class="nav-number">2.1</span> <span class="nav-text">連接設定</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#錯誤解決方案"> <span class="nav-number">2.2</span> <span class="nav-text">錯誤解決方案</span> </a> </li> </ol> </li>
     </ol>
   </div>
             

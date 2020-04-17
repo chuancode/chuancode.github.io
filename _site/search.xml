@@ -2,6 +2,27 @@
 <search>
   
     <entry>
+      <title><![CDATA[AWS RDS(MySQL) & MySQL Workbench]]></title>
+      <url>/aws/2020/04/14/aws-mysql-workbench/</url>
+      <content type="text"><![CDATA[在 AWS RDS 中建立 MySQL資料庫配置☑ 命名資料庫 (DB instance identifier)☑ 設定主用戶名稱 (Master username)☑ 設定主用戶密碼 (Master password)☑ 選擇免費模板 (Free tier) 時, Availability &amp; durability 無法做更改☑ 建立VPC☑ 若是要讓外部連接 Public accesible 選 Yes☑ 設定資料庫認證方式☑ 設定初始資料庫名稱(不設定亦可,可之後更改)連接 MySQL Workbench連接設定MySQL Workbench ➜ Database ➜ Connect to Database☑ Hostname : RDS Endpoint☑ Port☑ Username : master username☑ Password : master password (選案 “Store in Vault …” 來輸入密碼)錯誤解決方案錯誤訊息: error "Cannot Connect to Database Server" error (10060).解決方式:1) 在 RDS 的 Security Group 建立相對應的輸入規則2) 或者也有可能是網路的問題,可嘗試使用不同的網路]]></content>
+      <categories>
+        
+          <category> AWS </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> AWS RDS </tag>
+        
+          <tag> MySQL </tag>
+        
+          <tag> MySQL Workbench </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[Django 使用 MySQL 遇到的錯誤]]></title>
       <url>/django/2020/01/16/django-sql/</url>
       <content type="text"><![CDATA[ERROR 1!錯誤訊息:Authentication plugin 'caching_sha2_password' cannot be loaded: dlopen(/usr/local/mysql/lib/plugin/caching_sha2_password.so, 2): image not found解決方式:在 Mysql 環境中更改身份驗證方式ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密碼';ERROR 2!錯誤訊息:django.db.utils.OperationalError: (1049, "Unknown database 'mydatabase'")解決方式:在 Django 同步資料庫時要先手動建立資料庫在 Mysql 環境中建立資料庫並制定編碼create database mydatabase character set utf8;ERROR 3!錯誤訊息:建立超級用戶(createsuperuser)時出錯django.db.utils.ProgrammingError: (1146, “Table ‘auth_user’ doesn’t exist”)解決方式:進行遷移(migrate)來創建auth_user表python manage.py makemigrationspython manage.py migrate]]></content>
