@@ -2,6 +2,29 @@
 <search>
   
     <entry>
+      <title><![CDATA[React Native & Android emulator Setting]]></title>
+      <url>/react/android/2020/07/08/react-android/</url>
+      <content type="text"><![CDATA[✓已安裝Node安裝軟體  Android Studio  Java JDK 8 ! 需登入後安裝設定環境變數JAVA環境變數 → 系統變數(下方)變數名稱: JAVA_HOME變數值: C:\Program Files\Java\jdk1.8.0_251Android詳盡 Android 配置請參考☞ React Native Setting up the development environment 中的 React Native CLI Quickstart 篇1. ANDROID_HOME環境變數 → 系統變數(下方)變數名稱: ANDROID_HOME變數值: C:\Users\USERNAME\AppData\Local\Android\Sdk2. Android platfotm tools環境變數 → 系統變數(下方) → 點擊Path路徑: C:\Users\USERNAME\AppData\Local\Android\Sdk\platform-tools3. Android emulator環境變數 → 系統變數(下方) → 點擊Path路徑: C:\Users\USERNAME\AppData\Local\Android\Sdk\emulatorAndroid SDK✓ Android 9.0 pie✓ Android SDK Platform 28✓ Intel x86 Atom_64 System Image 或 Google APIs Intel x86 Atom System Image建立 Android 模擬器✓ 使用API 28 (Pie)React Native 專案建立      安裝 Expo CLI    npm install -g expo-cli        建立專案    npx react-native init PROJECTNAME        進入專案資料夾, 執行模擬器測試     cd PROJECTNAME npx react-native run-android      成功的話會自動開啟模擬器並顯示專案References]]></content>
+      <categories>
+        
+          <category> React </category>
+        
+          <category> Android </category>
+        
+      </categories>
+      <tags>
+        
+          <tag> React </tag>
+        
+          <tag> React Native </tag>
+        
+          <tag> Android </tag>
+        
+      </tags>
+      <tags></tags>
+    </entry>
+  
+    <entry>
       <title><![CDATA[AWS RDS(MySQL) & MySQL Workbench]]></title>
       <url>/aws/2020/04/14/aws-mysql-workbench/</url>
       <content type="text"><![CDATA[在 AWS RDS 中建立 MySQL資料庫配置☑ 命名資料庫 (DB instance identifier)☑ 設定主用戶名稱 (Master username)☑ 設定主用戶密碼 (Master password)☑ 選擇免費模板 (Free tier) 時, Availability &amp; durability 無法做更改☑ 建立VPC☑ 若是要讓外部連接 Public accesible 選 Yes☑ 設定資料庫認證方式☑ 設定初始資料庫名稱(不設定亦可,可之後更改)連接 MySQL Workbench連接設定MySQL Workbench ➜ Database ➜ Connect to Database☑ Hostname : RDS Endpoint☑ Port☑ Username : master username☑ Password : master password (選案 “Store in Vault …” 來輸入密碼)錯誤解決方案錯誤訊息: error "Cannot Connect to Database Server" error (10060).解決方式:1) 在 RDS 的 Security Group 建立相對應的輸入規則2) 或者也有可能是網路的問題,可嘗試使用不同的網路]]></content>
@@ -84,7 +107,7 @@
     <entry>
       <title><![CDATA[Github Pages 使用 Jekyll 網頁模版]]></title>
       <url>/jekyll/gitpages/2019/10/18/jekylltheme/</url>
-      <content type="text"><![CDATA[在 Jekyll Themes 選擇喜歡的模板以 Minimal Resume 為例終端機指令檢查是否安裝 Rubyruby --version下載 Rubybrew install ruby下載 Bundlergem install bundler下載模板git clone https://github.com/murraco/jekyll-theme-minimal-resume.gitcd jekyll-theme-minimal-resume下載 Jekyll 與附屬檔案bundle install在本地執行網頁基本指令，網站將開在 127.0.0.1:4000bundle exec jekyll serve開在指定IPbundle exec jekyll serve --port 8080部落格資料夾用途|-- _config.yml|-- _posts/|-- _site/|-- 404.html|-- about.md|-- Gemfile|-- Gemfile.lock|_  index.md_config.yml   ➜   基本網頁配置 _posts   ➜   網頁文章 _site   ➜   404.html   ➜   錯誤頁面 about.md   ➜   關於頁面 index.md   ➜   主頁面 Gemfile   ➜   Ruby 代碼集合 Gemfile.lock   ➜   所有安裝的的版本資訊]]></content>
+      <content type="text"><![CDATA[在 Jekyll Themes 選擇喜歡的模板以 Minimal Resume 為例終端機指令檢查是否安裝 Rubyruby --version下載 RubyMacOSbrew install rubyWindowsRuby 下載下載 Bundlergem install bundler下載模板git clone https://github.com/murraco/jekyll-theme-minimal-resume.gitcd jekyll-theme-minimal-resume下載 Jekyll 與附屬檔案進入模板資料夾後bundle install在本地執行網頁基本指令，網站將開在 127.0.0.1:4000bundle exec jekyll serve開在指定IPbundle exec jekyll serve --port 8080部落格資料夾用途|-- _config.yml|-- _posts/|-- _site/|-- 404.html|-- about.md|-- Gemfile|-- Gemfile.lock|_  index.md_config.yml   ➜   基本網頁配置 _posts   ➜   網頁文章 _site   ➜   404.html   ➜   錯誤頁面 about.md   ➜   關於頁面 index.md   ➜   主頁面 Gemfile   ➜   Ruby 代碼集合 Gemfile.lock   ➜   所有安裝的的版本資訊]]></content>
       <categories>
         
           <category> Jekyll </category>

@@ -21,9 +21,14 @@ ruby --version
 
 ### 下載 Ruby
 
+MacOS
+
 ```
 brew install ruby
 ```
+
+Windows
+[Ruby 下載](https://rubyinstaller.org/downloads/) 
 
 ### 下載 Bundler
 
@@ -39,6 +44,8 @@ cd jekyll-theme-minimal-resume
 ```
 
 ### 下載 Jekyll 與附屬檔案
+
+進入模板資料夾後
 
 ```
 bundle install
