@@ -72,6 +72,7 @@ plugins:
  - jemoji
  - jekyll-sitemap
  - jekyll-feed
+ - jekyll-google-tag-manager
 
 # ---------------------------------------------------------------
 # Site Information Settings
