@@ -250,6 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-feed
   jekyll-google-tag-manager
 
 BUNDLED WITH
