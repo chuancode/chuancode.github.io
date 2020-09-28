@@ -1,100 +1,16 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Look24 :: Cloud Messaging Notification</title>
-  <link rel="manifest" href="/manifest.json"/>
-</head>
-
-<body>
-  Look24 :: Cloud Messaging Notification
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js"></script>
-
-
-  <script>
-	// Initialize Firebase
-	  var config = {
-		apiKey: "AIzaSyBarEbp2tYT_kucTti2Vjk0LiT2qLlr7d4",
-		authDomain: "webpush-1166e.firebaseapp.com",
-		databaseURL: "https://webpush-1166e.firebaseio.com",
-		projectId: "webpush-1166e",
-		storageBucket: "webpush-1166e.appspot.com",
-		messagingSenderId: "1045809670811",
-		appId: "1:1045809670811:web:cce45c0fc1bca1ae35f43e",
-		measurementId: "G-SYQLGSYD4L"
-	};
-  firebase.initializeApp(config);
-  firebase.analytics();
-  </script>
-
-  <script>
-    // Retrieve Firebase Messaging object.
-    const messaging = firebase.messaging();
-    messaging.requestPermission().then(function() {      
-      console.log('Notification permission granted.');
-      if(isTokenSentToServer()){
-        console.log('Token already sent to server');
-      } else {
-        //get fcm token
-        registerToken();
-      } 
-      registerToken();
-    }).catch(function(err) {
-      console.log('Unable to get permission to notify.', err);
-	});
-	
-
-
-   // Registered
-   function registerToken(){
-      messaging.getToken()
-        .then(function(currentToken) {
-          if (currentToken) {
-            console.log('currentToken',currentToken);
-            setTokenSentToServer(true);
-          } else {
-            // Show permission request.
-            //console.log('No Instance ID token available. Request permission to generate one.');
-            setTokenSentToServer(false);
-          }
-        }).catch(function(err) {
-          console.log('An error occurred while retrieving token. ', err);
-          showToken('Error retrieving Instance ID token. ', err);
-          setTokenSentToServer(false);
-        });
-    }
-
-    function setTokenSentToServer(sent) {
-      window.localStorage.setItem('sentToServer', sent ? '1' : '0');
-    }
-
-    function isTokenSentToServer() {
-      return window.localStorage.getItem('sentToServer') === '1';
-    }
-
-    function showToken(currentToken) {
-      var tokenElement = document.querySelector('#token');
-      //tokenElement.textContent = currentToken;
-    }
-
-    // ForeGround
-    messaging.onMessage(function(payLoad)
-    {
-      console.log("Message Received");
-      console.log(payLoad);
-      notificationTitle = payLoad.notification.title;
-      notificationOptions = {
-        body: payLoad.notification.body,
-        icon: payLoad.notification.icon,
-      };
-      var notification = new Notification(notificationTitle, notificationOptions);
-    });
-  </script>
-</body>
+  <head>
+    <title>Using the section tag</title>
+  </head>
+  <body>
+    <section>
+      <h2>Hypertext markup language HTML</h2>
+      <p>HTML is the standard markup language for creating web pages and web applications. Browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
+    </section>
+    <section>
+      <h2>CSS</h2>
+      <p>Formal language, which is used as a description zone, formatting the appearance of a web page, written by the help of markup languages HTML and XHTML, but it can be applied to any XML-document, for example, to SVG or XUL.</p>
+    </section>
+  </body>
 </html>
