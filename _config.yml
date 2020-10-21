@@ -470,7 +470,7 @@ google_analytics: UA-149157544-1
 # Google Tag Manager
 google:
   tag_manager:
-    container_id: GTM-P2C5SZC
+    container_id: GTM-PTWSXPD
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
