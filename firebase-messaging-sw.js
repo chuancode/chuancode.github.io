@@ -7,8 +7,14 @@ importScripts('https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js')
 // messagingSenderId.
 firebase.initializeApp({
   'messagingSenderId': '223623084549',
-  'projectId': "webpush-1166e",
-  'apiKey': "AIzaSyBarEbp2tYT_kucTti2Vjk0LiT2qLlr7d4"
+  'apiKey': "AIzaSyBarEbp2tYT_kucTti2Vjk0LiT2qLlr7d4",
+	'authDomain': "webpush-1166e.firebaseapp.com",
+	'databaseURL': "https://webpush-1166e.firebaseio.com",
+	'projectId': "webpush-1166e",
+	'storageBucket': "webpush-1166e.appspot.com",
+	'messagingSenderId': "1045809670811",
+	'appId': "1:1045809670811:web:cce45c0fc1bca1ae35f43e",
+	'measurementId': "G-SYQLGSYD4L"
 });
 
 // messages.
