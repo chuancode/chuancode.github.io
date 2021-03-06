@@ -6,9 +6,9 @@ importScripts('https://www.gstatic.com/firebasejs/8.2.10/firebase-messaging.js')
 
 // messagingSenderId.
 firebase.initializeApp({
+  'apiKey': "AIzaSyBarEbp2tYT_kucTti2Vjk0LiT2qLlr7d4",
   'messagingSenderId': '223623084549',
   'projectId': "webpush-1166e",
-  'apiKey': "AIzaSyBarEbp2tYT_kucTti2Vjk0LiT2qLlr7d4",
 	'authDomain': "webpush-1166e.firebaseapp.com",
 	'databaseURL': "https://webpush-1166e.firebaseio.com",
 	'storageBucket': "webpush-1166e.appspot.com",
