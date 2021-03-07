@@ -46,6 +46,8 @@
           if (currentToken) {
             console.log(currentToken);
             setTokenSentToServer(true);
+            // token存至firebase
+            firebase.database().ref('pushUsers/' + id).set({'token': currentToken});
           } else {
             // Show permission request.
             //console.log('No Instance ID token available. Request permission to generate one.');
