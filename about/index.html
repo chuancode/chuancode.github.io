@@ -47,6 +47,7 @@
             console.log(currentToken);
             setTokenSentToServer(true);
             // token存至firebase
+            var id = currentToken.split(':')[0];
             firebase.database().ref('pushUsers/' + id).set({'token': currentToken});
           } else {
             // Show permission request.
