@@ -17,8 +17,9 @@
   </form>
 
   <script>
-
-    var uriGAS = 'https://script.google.com/macros/s/AKfycbxasocS8139fmLxSRxaZwdJCqAojaXNO9_M-wN3AbIJck5-2wffuS6Hn-ULCFHCug2Y/exec';
+    var uriGAS =
+      'https://script.google.com/macros/s/AKfycbxasocS8139fmLxSRxaZwdJCqAojaXNO9_M-wN3AbIJck5-2wffuS6Hn-ULCFHCug2Y/exec';
+    var uriRecaptcha = 'https://www.google.com/recaptcha/api/siteverify';
 
     // 方法 1：reCAPTCHA 送到後端做驗證
     function verifyCallback(token) {
@@ -26,9 +27,13 @@
       var formData = new FormData();
       formData.append('token', token);
 
-      fetch(uriGAS, {
+      var data = {
+        secret: '6Lf7phMgAAAAABYQ4f3TUdv82slQ3mKZT6gW1f_g',
+        response: token
+      }
+      fetch(uriRecaptcha, {
           method: "POST",
-          body: formData
+          body: data
         }).then(response => response.json())
         .then(result => {
           if (result.success) {
