@@ -1,58 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <title>reCAPTCHA demo: Simple page</title>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="flipclock.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Launch countdown timer</title>
 
-<body>
-  <form action="?" method="POST">
-    <div class="g-recaptcha" data-sitekey="6Lf7phMgAAAAAE5NTffUfkuurKHPq-QQ2Z1cYViU" data-theme="dark"
-      data-size="normal" data-callback="verifyCallback" data-expired-callback="expired" data-error-callback="error">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <h3>We're launching soon</h3>
+    <div class="clock"></div>
+    <div class="social">
+      <div class="fb">
+        <img src="./images/icon-facebook.svg" alt="fb" />
+      </div>
+      <div class="pin">
+        <img src="./images/icon-pinterest.svg" alt="pin" />
+      </div>
+      <div class="insta">
+        <img src="./images/icon-instagram.svg" alt="insta" />
+      </div>
     </div>
-    <br />
-    <input type="submit" value="Submit">
+    <script src="flipclock.js"></script>
 
-    <h3 class="none" id="verify">驗證成功！</h3>
-  </form>
-
-  <script>
-
-    var uriGAS = 'https://script.google.com/macros/s/AKfycbxasocS8139fmLxSRxaZwdJCqAojaXNO9_M-wN3AbIJck5-2wffuS6Hn-ULCFHCug2Y/exec';
-
-    // 方法 1：reCAPTCHA 送到後端做驗證
-    function verifyCallback(token) {
-
-      var formData = new FormData();
-      formData.append('token', token);
-
-      fetch(uriGAS, {
-          method: "POST",
-          body: formData
-        }).then(response => response.json())
-        .then(result => {
-          if (result.success) {
-            document.getElementById('verify').classList.remove('none');
-          } else {
-            window.alert(result['error-codes'][0])
-          }
-        })
-        .catch(err => {
-          window.alert(err)
-        })
-    }
-
-    // 過期要做的事
-    function expired(ex) {
-      window.alert('reCAPTCHA 驗證程序到期')
-    }
-
-    // 失敗要做的事
-    function error(err) {
-      window.alert('reCAPTCHA 驗證失敗')
-    }
-  </script>
-
-</body>
-
+  </body>
 </html>

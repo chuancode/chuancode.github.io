@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  --halfHeight: 0.72em;
+  --borderRadius: 8px;
+  height: 100vh;
+  background: hsl(235, 16%, 14%);
+  background-image: url("./images/bg-stars.svg"),
+    url("./images/pattern-hills.svg");
+  background-position: center bottom, center bottom;
+  background-repeat: repeat, no-repeat;
+  padding: 15px;
+  color: white;
+  background-size: contain;
+  font-family: "Red Hat Text", sans-serif;
+  text-transform: uppercase;
+}
+
+.social {
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  position: fixed;
+  bottom: 40px;
+}
+.social div {
+  margin: 0 35px;
+  transition: 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.pin {
+  border-radius: 50%;
+}
+.insta {
+  border-radius: 12px;
+}
+.fb:hover {
+  background: rgb(3, 53, 192);
+}
+.pin:hover {
+  background: rgb(105, 2, 2);
+}
+.insta:hover {
+  background: linear-gradient(rgb(29, 1, 51), rgb(51, 1, 14));
+}
+.social div:hover {
+  transform: scale(1.5);
+}
+
+h3 {
+  margin-top: 90px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100px;
+  font-size: 20px;
+  letter-spacing: 8px;
+  text-align: center;
+}
+
+.clock {
+  margin-top: 90px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (max-width: 526px) {
+  body {
+    background-size: auto;
+    background-position: center bottom, -850px bottom;
+  }
+  h3 {
+    margin-top: 120px;
+  }
+  .clock {
+    margin-top: 20px;
+  }
+  .flip-clock__slot {
+    font-size: 12px;
+  }
+}

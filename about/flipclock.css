@@ -1,0 +1,161 @@
+.flip-clock {
+  text-align: center;
+  perspective: 400px;
+  margin: 20px auto;
+  display: flex;
+}
+
+.flip-clock__piece {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.flip-clock__slot {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: hsl(237, 18%, 59%);
+  letter-spacing: 1px;
+}
+
+.flip::before,
+.flip::after {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: -0%;
+  width: 5px;
+  height: 5px;
+  background: hsl(234, 17%, 12%);
+  border-radius: 0 100px 100px 0;
+  z-index: 9998;
+}
+.flip::after {
+  left: auto;
+  right: 0%;
+  border-radius: 100px 0 0 100px;
+  z-index: 12999;
+}
+.flip {
+  position: relative;
+}
+.card {
+  display: block;
+  position: relative;
+  padding-bottom: var(--halfHeight);
+  font-size: 42px;
+  line-height: 0.95;
+  box-shadow: 0px 18px 8px hsl(234, 17%, 12%);
+}
+
+.card__top,
+.card__bottom,
+.card__back::before,
+.card__back::after {
+  display: block;
+  height: var(--halfHeight);
+  color: hsl(345, 95%, 68%);
+  background: hsl(236, 21%, 26%);
+  padding: 0.25em 0.25em;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  width: 1.8em;
+  transform: translateZ(0);
+}
+
+.card__bottom {
+  color: hsl(345, 95%, 68%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: solid 2px rgba(25, 26, 36, 0.281);
+  background: hsl(236, 21%, 26%);
+  border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.card__bottom::after {
+  display: block;
+  margin-top: calc(var(--halfHeight) * -1);
+}
+
+.card__back::before,
+.card__bottom::after {
+  content: attr(data-value);
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+}
+
+.card__back::before {
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.flip .card__back::before {
+  animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  animation-fill-mode: both;
+  transform-origin: center bottom;
+}
+
+.flip .card__back .card__bottom {
+  transform-origin: center top;
+  animation-fill-mode: both;
+  animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 2;
+  }
+  0%,
+  99% {
+    opacity: 0.99;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBottom {
+  0%,
+  50% {
+    z-index: -1;
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.99;
+    transform: rotateX(0deg);
+    z-index: 5;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card {
+    font-size: 72px;
+  }
+  .flip::before,
+  .flip::after {
+    top: 46%;
+    width: 8px;
+    height: 10px;
+  }
+  .flip-clock__slot {
+    letter-spacing: 7px;
+  }
+}
