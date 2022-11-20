@@ -56,18 +56,18 @@
 .card__back::after {
   display: block;
   height: var(--halfHeight);
-  color: hsl(345, 95%, 68%);
+  color: #87d7fd;
   background: hsl(236, 21%, 26%);
   padding: 0.25em 0.25em;
   border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  width: 1.8em;
+  width: auto;
   transform: translateZ(0);
 }
 
 .card__bottom {
-  color: hsl(345, 95%, 68%);
+  color: #87d7fd;
   position: absolute;
   top: 50%;
   left: 0;

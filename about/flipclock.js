@@ -1,8 +1,3 @@
-console.clear();
-console.log("Visit here to get original code");
-console.log("https://codepen.io/shshaw/pen/vKzoLL");
-console.log("Thanks to Shaw");
-
 function CountdownTracker(label, value) {
   var el = document.createElement("span");
 
@@ -21,7 +16,9 @@ function CountdownTracker(label, value) {
     backBottom = el.querySelector(".card__back .card__bottom");
 
   this.update = function (val) {
-    val = ("0" + val).slice(-2);
+    if (val.toString().length == 1) {
+      val = "0" + val;
+  }
     if (val !== this.currentValue) {
       if (this.currentValue >= 0) {
         back.setAttribute("data-value", this.currentValue);
@@ -49,7 +46,7 @@ function getTimeRemaining(endtime) {
     Days: Math.floor(t / (1000 * 60 * 60 * 24)),
     Hours: Math.floor((t / (1000 * 60 * 60)) % 24),
     Minutes: Math.floor((t / 1000 / 60) % 60),
-    Seconds: Math.floor((t / 1000) % 60),
+    // Seconds: Math.floor((t / 1000) % 60),
   };
 }
 
@@ -59,7 +56,7 @@ function getTime() {
     Total: t,
     Hours: t.getHours() % 12,
     Minutes: t.getMinutes(),
-    Seconds: t.getSeconds(),
+    // Seconds: t.getSeconds(),
   };
 }
 
@@ -112,7 +109,7 @@ function Clock(countdown, callback) {
   setTimeout(updateClock, 500);
 }
 
-var deadline = new Date(Date.parse(new Date()) + 9 * 24 * 60 * 60 * 1000);
+var deadline = new Date('2023-08-03');
 var c = new Clock(deadline, function () {
   alert("countdown complete");
 });

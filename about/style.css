@@ -13,8 +13,6 @@ body {
   --borderRadius: 8px;
   height: 100vh;
   background: hsl(235, 16%, 14%);
-  background-image: url("./images/bg-stars.svg"),
-    url("./images/pattern-hills.svg");
   background-position: center bottom, center bottom;
   background-repeat: repeat, no-repeat;
   padding: 15px;
@@ -24,42 +22,7 @@ body {
   text-transform: uppercase;
 }
 
-.social {
-  display: flex;
-  left: 50%;
-  transform: translateX(-50%);
-  justify-content: center;
-  position: fixed;
-  bottom: 40px;
-}
-.social div {
-  margin: 0 35px;
-  transition: 0.5s;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-}
-.pin {
-  border-radius: 50%;
-}
-.insta {
-  border-radius: 12px;
-}
-.fb:hover {
-  background: rgb(3, 53, 192);
-}
-.pin:hover {
-  background: rgb(105, 2, 2);
-}
-.insta:hover {
-  background: linear-gradient(rgb(29, 1, 51), rgb(51, 1, 14));
-}
-.social div:hover {
-  transform: scale(1.5);
-}
-
 h3 {
-  margin-top: 90px;
   display: grid;
   place-items: center;
   width: 100%;
@@ -70,7 +33,6 @@ h3 {
 }
 
 .clock {
-  margin-top: 90px;
   width: 100%;
   display: grid;
   place-items: center;
